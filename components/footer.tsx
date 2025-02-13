@@ -46,7 +46,7 @@ export default function Footer() {
       </div>
       <div className="container py-6 border-t">
         <p className="text-sm text-center text-muted-foreground">
-          {new Date().getFullYear()} FJKM Québec, Inc. Tous droits réservés.
+          {new Date().getFullYear()} FJKM Québec. Tous droits réservés.
         </p>
       </div>
     </footer>

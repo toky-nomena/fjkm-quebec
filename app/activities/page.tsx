@@ -7,7 +7,7 @@ export default async function ActivitiesPage() {
   return (
     <section
       id="activites"
-      className="container flex min-h-[calc(100vh-3.5rem)] max-w-screen-2xl flex-col items-center justify-center space-y-16 py-24 md:py-32"
+      className="flex min-h-[calc(100vh-3.5rem)] max-w-screen-2xl flex-col items-center justify-center space-y-16 py-24 md:py-32"
     >
       <div className="space-y-4 w-full">
         <Title className="text-center">Nos activités</Title>

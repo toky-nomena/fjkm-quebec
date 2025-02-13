@@ -5,11 +5,11 @@ import type { Metadata } from "next";
 
 import MouseMoveEffect from "@/components/ui/mouse-move-effect";
 import { ThemeProvider } from "@/components/theme/theme-provider";
-import { Navbar } from "@/components/navbar";
 import Footer from "@/components/footer";
 import { Bg } from "@/components/ui/bg";
 import Header from "@/components/header/header";
 import { Banner } from "@/components/banner";
+import { BackToTop } from "@/components/ui/back-to-top";
 
 const font = Noto_Sans({ subsets: ["latin"] });
 
@@ -31,8 +31,11 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             <div className="relative z-10">
               <Banner />
               <Header />
-              <main className="flex-1 reveal ">{children}</main>
+              <main className="container flex-1 mx-auto reveal">
+                {children}
+              </main>
               <Footer />
+              <BackToTop />
             </div>
           </div>
         </ThemeProvider>
