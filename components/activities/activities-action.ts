@@ -1,4 +1,6 @@
-export const activities = [
+import { Activity } from "./activity";
+
+export const activities: Activity[] = [
   {
     id: "1",
     date: "2025-02-05",
@@ -61,3 +63,8 @@ export const activities = [
     speakers: ["Groupe de Louange 'Chœurs de Lumière'", "Frère Thomas Bernard"],
   },
 ];
+
+export async function getActivities() {
+  await new Promise((resolve) => setTimeout(resolve, 1000));
+  return activities;
+}

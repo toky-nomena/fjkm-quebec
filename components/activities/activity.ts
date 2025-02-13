@@ -6,4 +6,6 @@ export interface Activity {
   description: string;
   startTime: string;
   endTime: string;
+  location?: string;
+  speakers?: string[];
 }

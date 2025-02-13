@@ -1,7 +1,9 @@
 import Activities from "@/components/activities/activities";
+import { Spinner } from "@/components/spinner";
 import { Title } from "@/components/ui/title";
+import { Suspense } from "react";
 
-export default function ActivitiesPage() {
+export default async function ActivitiesPage() {
   return (
     <section
       id="activites"
@@ -11,11 +13,13 @@ export default function ActivitiesPage() {
         <Title className="text-center">Nos activités</Title>
         <p className="mx-auto max-w-[42rem] leading-normal text-muted-foreground sm:text-xl sm:leading-8 text-center">
           Découvrez les événements et activités à venir prochainement de la
-          communauté FJKM Québec
+          communauté FJKMQuébec
         </p>
       </div>
       <div className="w-full max-w-4xl">
-        <Activities />
+        <Suspense fallback={<Spinner />}>
+          <Activities />
+        </Suspense>
       </div>
     </section>
   );
