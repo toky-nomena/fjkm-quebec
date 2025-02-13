@@ -1,4 +1,3 @@
-import { Clock, Users } from "lucide-react";
 import Link from "next/link";
 
 import { parseISO, format } from "date-fns";

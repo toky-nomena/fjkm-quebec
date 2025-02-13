@@ -1,11 +1,10 @@
-import { Container } from "@/components/container";
 import { BookOpen } from "lucide-react";
 
 export default function NotFound() {
   return (
-    <Container>
+    <div className="container flex min-h-[calc(100vh-3.5rem)] max-w-screen-2xl flex-col items-center justify-center space-y-6 py-24 md:py-32">
       <BookOpen className="w-10 h-10" />
       <span>Page introuvable</span>
-    </Container>
+    </div>
   );
 }

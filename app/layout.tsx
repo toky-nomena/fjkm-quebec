@@ -8,6 +8,8 @@ import { ThemeProvider } from "@/components/theme/theme-provider";
 import { Navbar } from "@/components/navbar";
 import Footer from "@/components/footer";
 import { Bg } from "@/components/ui/bg";
+import Header from "@/components/header/header";
+import { Banner } from "@/components/banner";
 
 const font = Noto_Sans({ subsets: ["latin"] });
 
@@ -27,8 +29,9 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           <div className="relative min-h-screen">
             <Bg />
             <div className="relative z-10">
-              <Navbar />
-              {children}
+              <Banner />
+              <Header />
+              <main className="flex-1 reveal ">{children}</main>
               <Footer />
             </div>
           </div>

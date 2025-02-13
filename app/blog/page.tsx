@@ -9,7 +9,7 @@ export default function BlogPage() {
       <div className="space-y-4 w-full">
         <Title className="text-center">Blog</Title>
         <p className="mx-auto max-w-[42rem] leading-normal text-muted-foreground sm:text-xl sm:leading-8 text-center">
-          Comming soon
+          Tous les articles du blog
         </p>
       </div>
       <div className="w-full max-w-4xl"></div>

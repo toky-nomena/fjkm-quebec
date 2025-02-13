@@ -10,7 +10,7 @@ export const ButtonLink = ({
     <Link
       {...props}
       className={cn(
-        "inline-block relative p-px mb-8 text-xs font-semibold leading-6 text-white no-underline rounded-md  cursor-pointer bg-slate-900 group ",
+        "inline-block relative p-px text-xs font-semibold leading-6 text-white no-underline rounded-md cursor-pointer bg-slate-900 group",
         props.className
       )}
     >
