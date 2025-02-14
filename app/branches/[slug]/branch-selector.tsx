@@ -7,7 +7,7 @@ export default async function BranchSelector() {
     <div className="flex flex-col items-center justify-center text-center">
       <div className="flex flex-wrap gap-3 overflow-visible items-center justify-center">
         {branches.map((branch) => {
-          return <BranchNavLink branch={branch} />;
+          return <BranchNavLink branch={branch} key={branch.slug} />;
         })}
       </div>
     </div>
