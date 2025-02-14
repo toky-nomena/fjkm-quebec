@@ -22,7 +22,7 @@ export default function Header() {
   const pathname = usePathname();
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="shadow sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container px-4 mx-auto">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
@@ -37,7 +37,7 @@ export default function Header() {
                   href={item.href}
                   className={cn(
                     "text-foreground hover:text-primary",
-                    pathname === item.href ? "text-primary" : ""
+                    pathname.startsWith(item.href) ? "text-primary" : ""
                   )}
                 >
                   {item.name}
@@ -66,14 +66,14 @@ export default function Header() {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <nav className="py-4 md:hidden reveal">
+          <nav className="absolute left-0 right-0 md:hidden bg-background shadow-lg">
             {navItems.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
                 className={cn(
-                  "block py-2 text-foreground hover:text-primary",
-                  pathname === item.href ? "text-primary" : ""
+                  "block py-2 text-foreground hover:text-primary reveal border-t border-border/40 p-4",
+                  pathname === item.href ? "text-primary font-semibold" : ""
                 )}
                 onClick={toggleMenu} // Close the menu on link click
               >

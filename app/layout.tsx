@@ -1,6 +1,6 @@
 import "./globals.css";
 import type { ReactNode } from "react";
-import { Noto_Sans } from "next/font/google";
+import { Geist } from "next/font/google";
 import type { Metadata } from "next";
 
 import MouseMoveEffect from "@/components/ui/mouse-move-effect";
@@ -11,7 +11,7 @@ import Header from "@/components/header/header";
 import { Banner } from "@/components/banner";
 import { BackToTop } from "@/components/ui/back-to-top";
 
-const font = Noto_Sans({ subsets: ["latin"] });
+const font = Geist({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "FJKM Quebec - Church",

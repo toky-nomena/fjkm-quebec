@@ -73,3 +73,25 @@
   @apply transition-all duration-500;
   animation: reveal 0.5s ease forwards;
 }
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+}
+
+.branch-item {
+  transition: transform 0.3s ease;
+}
+
+.scale-up {
+  transform: scale(1.1);
+}
+
+.scale-down {
+  transform: scale(1);
+}

@@ -1,10 +1,9 @@
 import Link from "next/link";
-import Image from "next/image";
 
 export default function Logo() {
   return (
     <Link href="/" className="flex items-center space-x-2">
-      <Image
+      <img
         src="https://avatar.iran.liara.run/public"
         alt="Logo"
         width={32}
