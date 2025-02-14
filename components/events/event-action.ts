@@ -29,6 +29,5 @@ const eventGroups: Activity[] = [
 ];
 
 export async function getEvents() {
-  await new Promise((resolve) => setTimeout(resolve, 3000));
   return eventGroups;
 }

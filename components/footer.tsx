@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Facebook } from "./icons/Facebook";
 import { Instagram } from "./icons/Instagram";
 import { ReactNode } from "react";
-import { branches } from "./branches/branches";
+import { getBranches } from "./branches/branches";
 
 function FooterTitle({ children }: { children: ReactNode }) {
   return (
@@ -31,7 +31,8 @@ function FooterLink({
   );
 }
 
-export default function Footer() {
+export default async function Footer() {
+  const branches = await getBranches();
   return (
     <footer className="border-t bg-background/50 text-foreground">
       <div className="container flex flex-col gap-8 py-8 md:flex-row md:py-12">

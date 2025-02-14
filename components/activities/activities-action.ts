@@ -65,6 +65,5 @@ export const activities: Activity[] = [
 ];
 
 export async function getActivities() {
-  await new Promise((resolve) => setTimeout(resolve, 1000));
   return activities;
 }

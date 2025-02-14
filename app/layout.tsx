@@ -1,5 +1,5 @@
 import "./globals.css";
-import type { ReactNode } from "react";
+import { Suspense, type ReactNode } from "react";
 import { Geist } from "next/font/google";
 import type { Metadata } from "next";
 
@@ -34,7 +34,9 @@ export default function RootLayout({ children }: { children: ReactNode }) {
               <main className="container flex-1 mx-auto reveal">
                 {children}
               </main>
-              <Footer />
+              <Suspense>
+                <Footer />
+              </Suspense>
               <BackToTop />
             </div>
           </div>

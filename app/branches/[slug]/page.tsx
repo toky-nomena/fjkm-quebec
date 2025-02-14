@@ -1,15 +1,6 @@
-import { branches } from "@/components/branches/branches";
+import { getBranches } from "@/components/branches/branches";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-
-// Background colors for team member cards
-const bgColors = [
-  "bg-[#F5E6D3]", // Beige
-  "bg-[#E2F0EA]", // Mint green
-  "bg-[#FFE5D9]", // Peach
-  "bg-[#E5F0FF]", // Light blue
-  "bg-[#F0E5FF]", // Light purple
-];
 
 export default async function BranchPage({
   params,
@@ -17,7 +8,7 @@ export default async function BranchPage({
   params: Promise<{ slug: string }>;
 }) {
   const slug = (await params).slug;
-
+  const branches = await getBranches();
   const teamData = branches.find((branch) => branch.slug === slug);
 
   if (!teamData) {
@@ -55,11 +46,12 @@ export default async function BranchPage({
               <div className="overflow-hidden mb-4 rounded-full aspect-square">
                 <div className="flex justify-center items-center w-full h-full">
                   <Image
-                    priority
                     src={imageUrl}
                     alt={`${member.name} - ${member.role}`}
-                    width={256}
-                    height={256}
+                    width={128}
+                    height={128}
+                    loading="lazy" // Lazy load the image
+                    quality={75} // Adjust quality for optimization
                     className="object-cover w-full h-full transition-transform duration-300 z-2 group-hover:scale-95"
                   />
                 </div>
