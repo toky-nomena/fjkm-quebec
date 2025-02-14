@@ -17,27 +17,27 @@ export async function getBranches() {
       responsibles: [
         {
           role: "Président",
-          name: "Andry Rakoto",
+          name: "Jack Doe",
           gender: "m",
         },
         {
           role: "Vice-président",
-          name: "Miora Randrianasolo",
+          name: "Jane Smith",
           gender: "f",
         },
         {
           role: "Secrétaire",
-          name: "Haja Rasoanaivo",
+          name: "Dave Johnson",
           gender: "m",
         },
         {
           role: "Conseiller",
-          name: "Vero Raveloson",
+          name: "Rose Doe",
           gender: "f",
         },
         {
           role: "Trésorier",
-          name: "Patrick Andrianarisoa",
+          name: "John Smith",
           gender: "m",
         },
       ],
@@ -59,27 +59,27 @@ export async function getBranches() {
       responsibles: [
         {
           role: "Président",
-          name: "Zo Rakotonirina",
+          name: "Jack Doe",
           gender: "m",
         },
         {
           role: "Vice-président",
-          name: "Claudine Ranaivo",
+          name: "Jane Smith",
           gender: "f",
         },
         {
           role: "Secrétaire",
-          name: "Faly Raharison",
+          name: "Dave Johnson",
           gender: "m",
         },
         {
           role: "Conseiller",
-          name: "Marie Rabearisoa",
+          name: "Rose Doe",
           gender: "f",
         },
         {
           role: "Trésorier",
-          name: "Jean Rasoarimanana",
+          name: "John Smith",
           gender: "m",
         },
       ],
@@ -101,27 +101,27 @@ export async function getBranches() {
       responsibles: [
         {
           role: "Président",
-          name: "Lova Andrianjafy",
+          name: "Jack Doe",
           gender: "m",
         },
         {
           role: "Vice-président",
-          name: "Malala Rasoamanarivo",
+          name: "Jane Smith",
           gender: "f",
         },
         {
           role: "Secrétaire",
-          name: "Eric Rakotomalala",
+          name: "Dave Johnson",
           gender: "m",
         },
         {
           role: "Conseiller",
-          name: "Faniry Ravelomanana",
+          name: "Rose Doe",
           gender: "f",
         },
         {
           role: "Trésorier",
-          name: "Tojo Rafanomezantsoa",
+          name: "John Smith",
           gender: "m",
         },
       ],
@@ -143,28 +143,28 @@ export async function getBranches() {
       responsibles: [
         {
           role: "Présidente",
-          name: "Josiane Rabe",
+          name: "Jane Doe",
           gender: "f",
         },
         {
           role: "Vice-présidente",
-          name: "Arlette Randrianarisoa",
-          gender: "f",
+          name: "Jack Smith",
+          gender: "m",
         },
         {
           role: "Secrétaire",
-          name: "Lanto Ramanantsoa",
+          name: "Rose Johnson",
           gender: "f",
         },
         {
           role: "Conseillère",
-          name: "Christine Rasoloarison",
+          name: "Jane Doe",
           gender: "f",
         },
         {
           role: "Trésorière",
-          name: "Sonia Rakotonirina",
-          gender: "f",
+          name: "John Smith",
+          gender: "m",
         },
       ],
     },
@@ -185,27 +185,27 @@ export async function getBranches() {
       responsibles: [
         {
           role: "Président",
-          name: "Rija Andrianirina",
+          name: "Jack Doe",
           gender: "m",
         },
         {
           role: "Vice-président",
-          name: "Jean-Paul Rakotovao",
-          gender: "m",
+          name: "Jane Smith",
+          gender: "f",
         },
         {
           role: "Secrétaire",
-          name: "David Randrianarivony",
+          name: "Dave Johnson",
           gender: "m",
         },
         {
           role: "Conseiller",
-          name: "Elia Ravelonarivo",
-          gender: "m",
+          name: "Rose Doe",
+          gender: "f",
         },
         {
           role: "Trésorier",
-          name: "Joseph Rakotonirina",
+          name: "John Smith",
           gender: "m",
         },
       ],
@@ -227,28 +227,28 @@ export async function getBranches() {
       responsibles: [
         {
           role: "Président",
-          name: "Hery Andrianantenaina",
+          name: "Jack Doe",
           gender: "m",
         },
         {
           role: "Vice-président",
-          name: "Tiana Rakotondrabe",
+          name: "Jane Smith",
           gender: "f",
         },
         {
           role: "Secrétaire",
-          name: "Ny Aina Rasoarimalala",
-          gender: "f",
-        },
-        {
-          role: "Conseiller",
-          name: "Mamy Ravelonjatovo",
+          name: "Dave Johnson",
           gender: "m",
         },
         {
-          role: "Trésorier",
-          name: "Nirina Rasoanirina",
+          role: "Conseiller",
+          name: "Rose Doe",
           gender: "f",
+        },
+        {
+          role: "Trésorier",
+          name: "John Smith",
+          gender: "m",
         },
       ],
     },
@@ -269,27 +269,27 @@ export async function getBranches() {
       responsibles: [
         {
           role: "Président",
-          name: "Manitra Andriamampionona",
+          name: "Jack Doe",
           gender: "m",
         },
         {
           role: "Vice-président",
-          name: "Lova Rakotobe",
-          gender: "m",
-        },
-        {
-          role: "Secrétaire",
-          name: "Hanitra Ralambo",
+          name: "Jane Smith",
           gender: "f",
         },
         {
+          role: "Secrétaire",
+          name: "Dave Johnson",
+          gender: "m",
+        },
+        {
           role: "Conseiller",
-          name: "Nivo Randrianirina",
+          name: "Rose Doe",
           gender: "f",
         },
         {
           role: "Trésorier",
-          name: "Hasina Rasolonjatovo",
+          name: "John Smith",
           gender: "m",
         },
       ],
@@ -312,27 +312,27 @@ export async function getBranches() {
       responsibles: [
         {
           role: "Président",
-          name: "Andry Rajaonarison",
+          name: "Jack Doe",
           gender: "m",
         },
         {
           role: "Vice-président",
-          name: "Faly Randriamihaja",
-          gender: "m",
-        },
-        {
-          role: "Secrétaire",
-          name: "Soa Razafindrakoto",
+          name: "Jane Smith",
           gender: "f",
         },
         {
+          role: "Secrétaire",
+          name: "Dave Johnson",
+          gender: "m",
+        },
+        {
           role: "Conseiller",
-          name: "Miora Andriatsalama",
+          name: "Rose Doe",
           gender: "f",
         },
         {
           role: "Trésorier",
-          name: "Hery Rasolonjatovo",
+          name: "John Smith",
           gender: "m",
         },
       ],
@@ -354,28 +354,28 @@ export async function getBranches() {
       responsibles: [
         {
           role: "Président",
-          name: "Fetra Randriamanana",
+          name: "Jack Doe",
           gender: "m",
         },
         {
           role: "Vice-président",
-          name: "Lydia Raharimbola",
+          name: "Jane Smith",
           gender: "f",
         },
         {
           role: "Secrétaire",
-          name: "Rado Randriamalala",
+          name: "Dave Johnson",
           gender: "m",
         },
         {
           role: "Conseiller",
-          name: "Tiana Rasoarivo",
+          name: "Rose Doe",
           gender: "f",
         },
         {
           role: "Trésorier",
-          name: "Ando Ravelonarivo",
-          gender: "f",
+          name: "John Smith",
+          gender: "m",
         },
       ],
     },

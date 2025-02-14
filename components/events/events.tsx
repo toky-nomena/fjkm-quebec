@@ -10,9 +10,7 @@ export async function Events() {
         <BlurFade delay={0.1 * index} className="" key={event.id} inView>
           <div className="space-y-2 border-b pb-6">
             <h2 className="text-xl md:text-2xl font-bold">{event.title}</h2>
-            <p className="text-lg text-gray-700 leading-relaxed">
-              {event.description}
-            </p>
+            <p className="text-lg leading-relaxed">{event.description}</p>
           </div>
         </BlurFade>
       ))}

@@ -5,7 +5,6 @@ import Image from "next/image";
 import { Events } from "@/components/events/events";
 import { ButtonLink } from "@/components/ui/button-link";
 import { BlurFade } from "@/components/magicui/blur-fade";
-import Link from "next/link";
 
 export default function MainPage() {
   return (
@@ -15,18 +14,10 @@ export default function MainPage() {
           Mois de Fevrier
         </span>
         <div className="max-w-2xl mt-8 space-y-4">
-          <h2 className="text-4xl md:text-5xl font-bold leading-tight">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
             Mamonjy ny tenin'Andriamanitra
           </h2>
         </div>
-        <span className="md:absolute md:bottom-4 md:right-4 mt-4">
-          <span className="flex items-center space-x-4 bg-white hover:bg-white/80 rounded-full px-4 py-2">
-            <Link href="/this-month" className="flex items-center text-primary">
-              <span className="text-lg">En savoir plus</span>
-              <ArrowRight />
-            </Link>
-          </span>
-        </span>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3">
@@ -59,7 +50,7 @@ export default function MainPage() {
             </BlurFade>
 
             <div className="flex items-center gap-4">
-              <div className="w-32 h-32 rounded-full bg-pink-200 flex items-center justify-center">
+              <div className="w-24 h-24 md:w-32 md:h-32 rounded-full bg-pink-200 flex items-center justify-center">
                 <Image
                   src={"/images/boy.png"}
                   alt={`Pasteur`}
@@ -71,10 +62,10 @@ export default function MainPage() {
                 />
               </div>
               <div>
-                <h1 className="text-2xl font-bold flex items-center gap-2">
-                  Pasteur <span className="text-primary">Andry Rakoto</span>
+                <h1 className="text-xl md:text-2xl font-bold flex items-center gap-2">
+                  Pasteur John Doe
                 </h1>
-                <p className="text-gray-600">9 Fevrier 2025</p>
+                <p className="text-sm md:text-gray-600">9 Fevrier 2025</p>
               </div>
             </div>
           </div>
