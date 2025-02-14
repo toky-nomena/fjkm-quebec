@@ -1,113 +1,95 @@
 import Link from "next/link";
 
-import { Facebook } from "./icons/Facebook";
 import { Instagram } from "./icons/Instagram";
-import { ReactNode } from "react";
-import { getBranches } from "./branches/branches";
+import { Facebook } from "./icons/Facebook";
 
-function FooterTitle({ children }: { children: ReactNode }) {
-  return (
-    <h3 className="inline-block text-base font-semibold text-foreground">
-      {children}
-    </h3>
-  );
-}
+import ActiveLink from "./link/active-link";
 
-function FooterLink({
-  children,
-  to,
-  blank,
-}: {
-  children: ReactNode;
-  to: string;
-  blank?: boolean;
-}) {
-  return (
-    <Link href={to} target={blank ? "_blank" : ""}>
-      <span className="transition-colors hover:underline text-muted-foreground hover:text-primary">
-        {children}
-      </span>
-    </Link>
-  );
+interface FooterSection {
+  title: string;
+  links: { name: string; href: string }[];
+  className?: string;
 }
 
 export default async function Footer() {
-  const branches = await getBranches();
+  const footerSections: FooterSection[] = [
+    {
+      title: "L'EGLISE",
+      links: [
+        { name: "Cultes", href: "/cults" },
+        { name: "Pasteur", href: "/pastor" },
+        { name: "Diacres", href: "/diacres" },
+        { name: "Branches et associations", href: "/branches" },
+      ],
+      className: "lg:col-span-2",
+    },
+    {
+      title: "BIBLIOTHEQUE",
+      links: [
+        { name: "Mofon'aina", href: "/verses" },
+        { name: "Agenda", href: "/agenda" },
+        { name: "Activiés", href: "/activities" },
+        { name: "Contact Us", href: "/contact" },
+      ],
+    },
+    {
+      title: "CONTACTS",
+      links: [
+        { name: "Téléphone: 418-123-4567-890", href: "tel:418-123-4567-890" },
+        {
+          name: "Email: contact@fjkm-quebec.ca",
+          href: "mailto:contact@fjkm-quebec.ca",
+        },
+        { name: "Facebook", href: "https://ww.facebook.com/fjkm-quebec" },
+      ],
+    },
+    {
+      title: "LEGAL",
+      links: [
+        { name: "Privacy Policy", href: "/privacy" },
+        { name: "Licensing", href: "/licensing" },
+        { name: "Terms & Conditions", href: "/terms" },
+      ],
+    },
+  ];
+
   return (
-    <footer className="border-t bg-background/50 text-foreground">
-      <div className="container flex flex-col gap-8 py-8 md:flex-row md:py-12">
-        <div className="flex-1 space-y-4">
-          <FooterTitle>Branches</FooterTitle>
-          <ul className="max-w-md list-disc list-inside text-muted-foreground">
-            {branches.map((branch) => (
-              <li key={branch.slug}>
-                <FooterLink to={`/branches/${branch.slug}`.toLowerCase()}>
-                  {branch.name}
-                </FooterLink>
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div className="grid flex-1 grid-cols-2 gap-12 sm:grid-cols-2">
-          <div className="space-y-4">
-            <h3 className="inline-block pb-2 text-base font-medium text-foreground">
-              Nous contacter
-            </h3>
-            <ul className="space-y-3 text-sm text-muted-foreground">
-              <li>
-                Courriel:{" "}
-                <FooterLink to="mailto:contact@fjkm-quebec.com">
-                  contact@fjkm-quebec.com
-                </FooterLink>
-              </li>
-              <li>
-                Téléphone:{" "}
-                <FooterLink to="tel:+15141234567">+1 (514) 123-4567</FooterLink>
-              </li>
-            </ul>
-          </div>
-          <div className="space-y-4">
-            <h3 className="inline-block pb-2 text-base font-medium text-foreground">
-              Mentions légales
-            </h3>
-            <ul className="space-y-3 text-sm text-muted-foreground">
-              <li>
-                <FooterLink to="/">Confidentialité</FooterLink>
-              </li>
-              <li>
-                <FooterLink to="/">Conditions d'utilisation</FooterLink>
-              </li>
-            </ul>
-          </div>
-          <div className="space-y-4">
-            <h3 className="inline-block pb-2 text-base font-medium text-foreground">
-              Nous suivre
-            </h3>
-            <div className="flex space-x-4">
-              <Link
-                href="https://instagram.com/fjkm-quebec"
-                target="_blank"
-                className="transition-colors text-muted-foreground hover:text-primary"
-              >
-                <Instagram />
-                <span className="sr-only">Instagram</span>
-              </Link>
-              <Link
-                href="https://facebook.com/fjkm-quebec"
-                target="_blank"
-                className="transition-colors text-muted-foreground hover:text-primary"
-              >
-                <Facebook />
-                <span className="sr-only">Facebook</span>
-              </Link>
+    <footer className="bg-background/10 border-t">
+      <div className="container mx-auto py-12">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+          {footerSections.map((section) => (
+            <div key={section.title}>
+              <h2 className="text-sm font-bold mb-4 uppercase text-primary">
+                {section.title}
+              </h2>
+              <ul className="space-y-3">
+                {section.links.map((link) => (
+                  <li key={link.name}>
+                    <ActiveLink
+                      href={link.href}
+                      className="text-sm hover:text-primary"
+                    >
+                      {link.name}
+                    </ActiveLink>
+                  </li>
+                ))}
+              </ul>
             </div>
+          ))}
+        </div>
+        <div className="mt-8 pt-8 border-t flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-sm">© 2025 FJKM Québec. Tout droits reservés.</p>
+          <div className="flex space-x-6">
+            <Link href="https://instagram.com/fjkm-quebec" target="_blank">
+              <Instagram />
+              <span className="sr-only">Instagram</span>
+            </Link>
+            <Link href="https://facebook.com/fjkm-quebec" target="_blank">
+              <Facebook />
+              <span className="sr-only">Facebook</span>
+            </Link>
           </div>
         </div>
-      </div>
-      <div className="container py-6 border-t">
-        <p className="text-sm text-center text-muted-foreground">
-          {new Date().getFullYear()} FJKM Québec. Tous droits réservés.
-        </p>
       </div>
     </footer>
   );

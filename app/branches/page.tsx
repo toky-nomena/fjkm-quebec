@@ -4,7 +4,5 @@ import { redirect } from "next/navigation";
 
 export default async function BranchesPage() {
   const branches = await getBranches();
-  return redirect(
-    "/branches/" + branches[Math.floor(Math.random() * branches.length)].slug
-  );
+  return redirect("/branches/" + branches[0].slug);
 }

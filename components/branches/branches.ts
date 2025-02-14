@@ -4,13 +4,15 @@ export async function getBranches() {
       name: "Sampana Sekoly Alahady",
       acronym: "SSA",
       slug: "sampana-sekoly-alahady",
+      icon: "📚",
       mission:
-        "Enseigner la Parole de Dieu aux enfants et aux adultes à travers les cours de l'école du dimanche.",
-      activities: [
-        "Organisation des cours d'école du dimanche",
-        "Partage d'histoires bibliques",
-        "Ateliers sur les valeurs chrétiennes",
-        "Retraites annuelles pour les enseignants et les élèves",
+        "Annoncer l'Évangile et encourager les croyants à travailler pour l'évangélisation et le service.",
+      missions: [
+        "Sensibilisation et évangélisation en plein air",
+        "Formation spirituelle et évangélique",
+        "Organisation de réunions de prière pour la communauté",
+        "Aide aux personnes dans le besoin par des œuvres de charité",
+        "Visites et encouragements aux personnes en détresse spirituelle",
       ],
       verse:
         "Proverbes 22:6 - Instruis l'enfant selon la voie qu'il doit suivre; et quand il sera vieux, il ne s'en détournera pas.",
@@ -46,9 +48,10 @@ export async function getBranches() {
       name: "Sampana Fifohazana",
       acronym: "SAFIF",
       slug: "sampana-fifohazana",
+      icon: "🙏",
       mission:
         "Diriger les ministères de réveil et de guérison de l'église à travers un éveil spirituel.",
-      activities: [
+      missions: [
         "Organisation de sessions de réveil",
         "Visites et prières pour les malades",
         "Conseil spirituel",
@@ -88,9 +91,10 @@ export async function getBranches() {
       name: "Sampana Mpanazava sy Tily",
       acronym: "SAMPATI",
       slug: "sampana-mpanazava-sy-tily",
+      icon: "🏕️",
       mission:
         "Promouvoir le leadership et le développement personnel à travers les activités de scoutisme.",
-      activities: [
+      missions: [
         "Organisation de camps et de randonnées",
         "Programmes de formation au leadership",
         "Projets de service communautaire",
@@ -130,9 +134,10 @@ export async function getBranches() {
       name: "Sampana Dorkasy",
       acronym: "DORKASY",
       slug: "sampana-dorkasy",
+      icon: "❤️",
       mission:
         "Soutenir l'église et la communauté par des actes de bonté et de service.",
-      activities: [
+      missions: [
         "Couture et dons de vêtements",
         "Distribution de repas aux personnes dans le besoin",
         "Organisation d'événements de collecte de fonds",
@@ -172,9 +177,10 @@ export async function getBranches() {
       name: "Sampana Lehilahy Kristiana",
       acronym: "SLK",
       slug: "sampana-lehilahy-kristiana",
+      icon: "👨",
       mission:
         "Guider les hommes chrétiens dans leur croissance spirituelle et leurs responsabilités.",
-      activities: [
+      missions: [
         "Groupes d'étude biblique",
         "Programmes de leadership et de mentorat",
         "Organisation de conférences pour les hommes",
@@ -214,9 +220,10 @@ export async function getBranches() {
       name: "Sampana Tanora Kristiana",
       acronym: "STK",
       slug: "sampana-tanora-kristiana",
+      icon: "🌟",
       mission:
         "Engager les jeunes dans l'église et les accompagner dans leur cheminement de foi.",
-      activities: [
+      missions: [
         "Rencontres de jeunes et études bibliques",
         "Pratique de musique et de louange",
         "Organisation d'événements sportifs et sociaux",
@@ -256,9 +263,10 @@ export async function getBranches() {
       name: "Fikambanan'ny Mpitendry Zavamaneno",
       acronym: "FIMPIZ",
       slug: "fikambanany-mpitendry-zavamaneno",
+      icon: "🎵",
       mission:
         "Unir et soutenir les musiciens dans leur service pour la gloire de Dieu.",
-      activities: [
+      missions: [
         "Répétitions hebdomadaires pour les cultes",
         "Formation musicale pour les membres",
         "Concerts de musique chrétienne",
@@ -298,14 +306,15 @@ export async function getBranches() {
       name: "Asa sy Fitoriana ny Filazantsara",
       acronym: "AFF",
       slug: "asa-sy-fitoriana-ny-filazantsara",
+      icon: "🌍",
       mission:
-        "Manambara ny Filazantsara sy mamporisika ny mpino hiasa ho amin'ny fitoriana sy fanompoana.",
-      activities: [
-        "Fanentanana sy fitoriana an-kalamanjana",
-        "Fampiofanana ara-pinoana sy evanjelika",
-        "Fikarakaran-doham-piangonana ho an'ny fiaraha-mivavaka",
-        "Fanampiana ny mpiara-belona amin'ny alalan'ny asa soa",
-        "Fitsidihana sy fampaherezana ireo sahirana ara-panahy",
+        "Annoncer l'Évangile et encourager les croyants à travailler pour l'évangélisation et le service.",
+      missions: [
+        "Sensibilisation et évangélisation en plein air",
+        "Formation spirituelle et évangélique",
+        "Organisation de réunions de prière pour la communauté",
+        "Aide aux personnes dans le besoin par des œuvres de charité",
+        "Visites et encouragements aux personnes en détresse spirituelle",
       ],
       verse:
         "Matio 28:19-20 - Allez, faites de toutes les nations des disciples, les baptisant au nom du Père, du Fils et du Saint-Esprit.",
@@ -339,11 +348,12 @@ export async function getBranches() {
     },
     {
       name: "Antoko Mpihira Miako Fiderana",
-      acronym: "MIAKO FIDERANA",
+      acronym: "MIAKO-FIDERANA",
       slug: "antoko-mpihira-miako-fiderana",
+      icon: "🎤",
       mission:
         "Glorifier Dieu à travers la musique et conduire la congrégation dans la louange.",
-      activities: [
+      missions: [
         "Répétitions et performances du chœur",
         "Organisation de concerts et de soirées de louange",
         "Formation des nouveaux membres du chœur",

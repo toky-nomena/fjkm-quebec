@@ -7,7 +7,7 @@ export default async function ActivitiesPage() {
   return (
     <section
       id="activites"
-      className="container flex flex-col justify-center items-center py-24 space-y-16 md:py-32"
+      className="flex flex-col justify-center items-center space-y-16"
     >
       <div className="space-y-4 w-full">
         <Title className="text-center">Nos activités</Title>
@@ -16,7 +16,7 @@ export default async function ActivitiesPage() {
           communauté FJKMQuébec
         </p>
       </div>
-      <div className="w-full max-w-4xl">
+      <div className="w-full">
         <Suspense fallback={<Spinner />}>
           <Activities />
         </Suspense>

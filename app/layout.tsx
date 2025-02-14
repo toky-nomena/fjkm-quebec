@@ -10,6 +10,7 @@ import { Bg } from "@/components/ui/bg";
 import Header from "@/components/header/header";
 import { Banner } from "@/components/banner";
 import { BackToTop } from "@/components/ui/back-to-top";
+import { Theme } from "@/components/theme";
 
 const font = Geist({ subsets: ["latin"] });
 
@@ -31,7 +32,8 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             <div className="relative z-10">
               <Banner />
               <Header />
-              <main className="container flex-1 mx-auto reveal">
+              <main className="container flex-1 mx-auto reveal my-16 space-y-10">
+                <Theme />
                 {children}
               </main>
               <Suspense>
