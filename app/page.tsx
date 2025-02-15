@@ -25,7 +25,7 @@ export default function MainPage() {
             <h3 className="text-xl font-semibold">
               Notre Vision Communautaire
             </h3>
-            <p className="text-base tracking-wide leading-relaxed text-justify md:text-lg selection:bg-primary/20">
+            <p className="text-base tracking-wide leading-relaxed md:text-lg selection:bg-primary/20">
               Dans notre communauté de FJKM Québec, nous croyons en la puissance
               transformatrice de la foi et de l'amour. Chaque jour, nous
               cherchons à incarner les enseignements du Christ, en tendant la
@@ -36,7 +36,7 @@ export default function MainPage() {
             <h3 className="text-xl font-semibold">
               Au-Delà des Murs de l'Église
             </h3>
-            <p className="text-base tracking-wide leading-relaxed text-justify md:text-lg selection:bg-primary/20">
+            <p className="text-base tracking-wide leading-relaxed md:text-lg selection:bg-primary/20">
               Notre mission va au-delà des murs de l'église : nous sommes
               appelés à être la lumière dans notre communauté, à porter l'espoir
               là où il semble absent, et à manifester la grâce divine à travers
@@ -48,7 +48,7 @@ export default function MainPage() {
             <h3 className="text-xl font-semibold">
               Transformer les Défis en Opportunités
             </h3>
-            <p className="text-base tracking-wide leading-relaxed text-justify md:text-lg selection:bg-primary/20">
+            <p className="text-base tracking-wide leading-relaxed md:text-lg selection:bg-primary/20">
               Guidés par la parole de Dieu, nous embrassons chaque défi comme
               une opportunité de croissance, chaque difficulté comme un chemin
               vers une foi plus profonde. Nous ne nous décourageons pas face aux
@@ -57,7 +57,7 @@ export default function MainPage() {
             </p>
 
             <h3 className="text-xl font-semibold">Notre Engagement Ultime</h3>
-            <p className="text-base tracking-wide leading-relaxed text-justify md:text-lg selection:bg-primary/20">
+            <p className="text-base tracking-wide leading-relaxed md:text-lg selection:bg-primary/20">
               Notre vision est simple mais puissante : être une communauté qui
               reflète l'amour du Christ, qui accueille tous sans jugement, qui
               soutient chacun dans son parcours spirituel, et qui travaille
@@ -67,8 +67,8 @@ export default function MainPage() {
           </div>
         </BlurFade>
 
-        <div className="flex gap-6 items-center p-6 rounded-2xl transition-all duration-300 bg-primary/5">
-          <div className="flex justify-center items-center w-24 h-24 rounded-full ring-4 transition-all bg-primary/10 md:w-32 md:h-32 ring-primary/20 hover:ring-primary/40">
+        <div className="flex gap-6 items-center rounded-2xl transition-all duration-300 bg-primary/5">
+          <div className="flex justify-center items-center w-20 h-20 rounded-full ring-4 transition-all sm:w-24 md:w-32 sm:h-24 md:h-32 bg-primary/10 ring-primary/20 hover:ring-primary/40">
             <Image
               src={"/images/boy.png"}
               alt="Pasteur"
@@ -80,10 +80,13 @@ export default function MainPage() {
             />
           </div>
           <div className="space-y-2">
-            <h2 className="text-2xl font-bold text-gray-800 dark:text-white">
-              Pasteur John Doe
+            <h2 className="text-sm font-bold text-gray-800 sm:text-xl md:text-2xl dark:text-white">
+              Reverand Dr. Rakotondrabe Ndrianja
             </h2>
-            <p className="text-sm text-gray-600 dark:text-gray-300">
+            <p className="text-xs text-gray-600 sm:text-sm dark:text-gray-300">
+              Pasteur de la FJKM Quebec
+            </p>
+            <p className="text-xs text-gray-600 sm:text-sm dark:text-gray-300">
               9 Fevrier 2025
             </p>
           </div>

@@ -8,7 +8,34 @@ import {
   Music,
   Globe,
   Mic,
+  Church,
+  Cross,
+  Flame,
+  Leaf,
+  Radio,
+  Rocket,
+  Sailboat,
 } from "lucide-react";
+import { LucideIcon } from "lucide-react";
+
+const ICON_MAP: Record<string, LucideIcon> = {
+  book: BookOpen,
+  zap: Zap,
+  tent: Tent,
+  heart: Heart,
+  users: Users,
+  star: Star,
+  music: Music,
+  globe: Globe,
+  mic: Mic,
+  church: Church,
+  cross: Cross,
+  flame: Flame,
+  leaf: Leaf,
+  radio: Radio,
+  rocket: Rocket,
+  sailboat: Sailboat,
+};
 
 interface BranchIconProps {
   icon: string;
@@ -17,45 +44,17 @@ interface BranchIconProps {
   backgroundClassName?: string;
 }
 
-function getIconComponent(icon: string) {
-  switch (icon) {
-    case "book-open":
-      return BookOpen;
-    case "zap":
-      return Zap;
-    case "tent":
-      return Tent;
-    case "heart":
-      return Heart;
-    case "users":
-      return Users;
-    case "star":
-      return Star;
-    case "music":
-      return Music;
-    case "globe":
-      return Globe;
-    case "mic":
-      return Mic;
-    default:
-      return null;
-  }
-}
-
 export function BranchIcon({
   icon,
   name,
   className = "w-16 h-16 text-primary",
   backgroundClassName = "flex justify-center items-center w-32 h-32 rounded-full bg-primary/10",
 }: BranchIconProps) {
-  // Explicit icon mapping with switch statement
-  const IconComponent = getIconComponent(icon);
+  const Icon = ICON_MAP[icon] || BookOpen;
 
   return (
-    <div className={backgroundClassName}>
-      {IconComponent ? (
-        <IconComponent className={className} aria-label={`Icône de ${name}`} />
-      ) : null}
+    <div className={backgroundClassName} aria-label={`Icon for ${name}`}>
+      <Icon className={className} aria-hidden="true" />
     </div>
   );
 }

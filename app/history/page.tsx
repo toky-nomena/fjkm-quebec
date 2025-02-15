@@ -11,7 +11,7 @@ import { BlurFade } from "@/components/magicui/blur-fade";
 
 export default function HistoryPage() {
   return (
-    <article className="container px-4 py-12 mx-auto space-y-16 max-w-4xl">
+    <article className="container py-12 mx-auto space-y-16 max-w-6xl">
       <BlurFade>
         <header className="space-y-6 text-center">
           <Title className="text-4xl font-extrabold text-foreground">
@@ -66,22 +66,25 @@ export default function HistoryPage() {
             className="space-y-6 group"
             aria-labelledby={`section-${index}`}
           >
-            <div className="flex gap-4 items-center mb-4">
+            <div className="flex gap-3 items-center mb-4 sm:gap-4">
               <div
-                className="p-3 rounded-full bg-primary/10"
+                className="p-2 rounded-full sm:p-3 bg-primary/10"
                 role="presentation"
               >
-                <Icon className="w-8 h-8 text-primary" aria-hidden="true" />
+                <Icon
+                  className="w-6 h-6 sm:w-8 sm:h-8 text-primary"
+                  aria-hidden="true"
+                />
               </div>
               <h2
                 id={`section-${index}`}
-                className="text-2xl font-bold transition-colors text-foreground group-hover:text-primary"
+                className="text-xl font-bold transition-colors sm:text-2xl text-foreground group-hover:text-primary"
               >
                 {title}
               </h2>
             </div>
             <p
-              className="pl-16 text-base tracking-wide leading-relaxed md:text-lg selection:bg-primary/20"
+              className="pl-0 text-base tracking-wide leading-relaxed sm:pl-12 md:text-lg selection:bg-primary/20"
               aria-describedby={`section-${index}`}
             >
               {content}

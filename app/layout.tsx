@@ -32,7 +32,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             <div className="relative z-10">
               <Banner />
               <Header />
-              <main className="container flex-1 mx-auto reveal my-16 space-y-10">
+              <main className="container flex-1 mx-auto my-16 space-y-10 reveal">
                 <Theme />
                 {children}
               </main>

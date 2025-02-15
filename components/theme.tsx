@@ -1,11 +1,11 @@
 export function Theme() {
   return (
-    <div className="bg-primary text-white p-8 rounded-2xl">
-      <span className="bg-white/90 text-gray-900 hover:bg-white/80 rounded-full py-2 px-4">
+    <div className="p-8 text-white rounded-2xl bg-primary">
+      <span className="px-4 py-2 text-gray-900 rounded-full bg-white/90 hover:bg-white/80">
         Mois de Fevrier
       </span>
-      <div className="max-w-2xl mt-8 space-y-4">
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
+      <div className="mt-8 space-y-4 max-w-2xl">
+        <h2 className="text-xl font-bold leading-tight sm:text-2xl md:text-3xl lg:text-4xl">
           Mamonjy ny tenin'Andriamanitra
         </h2>
       </div>

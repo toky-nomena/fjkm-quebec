@@ -13,17 +13,17 @@ export function ActivityItem({ activity }: ActivityItemProps) {
       aria-labelledby={`activity-${activity.id}`}
     >
       <div
-        className="flex relative z-10 justify-center items-center w-12 h-12 bg-white rounded-full border border-gray-200 shadow-sm dark:bg-gray-800 dark:border-gray-700"
+        className="flex relative z-10 justify-center items-center w-10 h-10 bg-white rounded-full border border-gray-200 shadow-sm sm:w-12 sm:h-12 dark:bg-gray-800 dark:border-gray-700"
         role="presentation"
       >
         <Calendar
-          className="w-6 h-6 text-primary dark:text-primary-foreground"
+          className="w-4 h-4 sm:w-6 sm:h-6 text-primary dark:text-primary-foreground"
           aria-hidden="true"
         />
       </div>
 
       <div
-        className="flex-1 p-4 rounded-lg border shadow-sm transition-all border-border"
+        className="flex-1 rounded-lg border shadow-sm transition-all border-border"
         role="group"
         aria-label="Détails de l'activité"
       >

@@ -4,7 +4,7 @@ export async function getBranches() {
       name: "Sampana Sekoly Alahady",
       acronym: "SSA",
       slug: "sampana-sekoly-alahady",
-      icon: "book-open",
+      icon: "book",
       mission:
         "Annoncer l'Évangile et encourager les croyants à travailler pour l'évangélisation et le service.",
       missions: [
