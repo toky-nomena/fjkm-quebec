@@ -9,6 +9,7 @@ import { Facebook } from "@/components/icons/Facebook";
 import { Instagram } from "@/components/icons/Instagram";
 import Link from "next/link";
 import { Contact } from "@/components/contact";
+import { BranchIcon } from "./branch-icon";
 
 export default async function BranchPage({
   params,
@@ -24,32 +25,67 @@ export default async function BranchPage({
   }
 
   return (
-    <div className="container px-4 py-6 mx-auto space-y-12 text-center">
-      <section id="header">
-        <h1 className="text-6xl">{branch.icon}</h1>
-      </section>
+    <div className="container px-4 py-6 mx-auto space-y-16 max-w-6xl text-center">
+      <header className="space-y-4">
+        <div className="flex justify-center mb-4">
+          <div className="flex justify-center items-center w-32 h-32 rounded-full bg-primary/10">
+            <span
+              role="img"
+              aria-label={`Icône de ${branch.name}`}
+              className="text-5xl"
+            >
+              <BranchIcon
+                icon={branch.icon} // Lucide React icon
+                name={branch.name}
+              />
+            </span>
+          </div>
+        </div>
+
+        <div className="space-y-2">
+          <Title className="text-3xl font-bold text-foreground">
+            {branch.name}
+          </Title>
+          <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
+            {branch.mission}
+          </p>
+        </div>
+      </header>
       <section
-        className="flex flex-col items-center mb-16 space-y-2"
-        id="description"
+        id="verse"
+        aria-label="Verset biblique"
+        className="mx-auto max-w-xl"
       >
-        <Title>{branch.name}</Title>
-        <p>{branch.mission}</p>
-        <blockquote className="max-w-screen-md">
-          <em className="text-base italic font-normal leading-relaxed text-muted-foreground">
-            <strong className="text-2xl font-bold">"</strong>
+        <blockquote className="relative">
+          <span className="absolute -left-4 text-4xl opacity-50 text-muted-foreground">
+            "
+          </span>
+          <em className="text-base italic leading-relaxed text-muted-foreground">
             {branch.verse}
-            <strong className="text-2xl font-bold">"</strong>
           </em>
+          <span className="absolute -right-4 text-4xl opacity-50 text-muted-foreground">
+            "
+          </span>
         </blockquote>
       </section>
-
-      <section className="flex flex-col items-center space-y-8" id="missions">
-        <h3 className="text-2xl font-bold">Les missions de la branche</h3>
+      <section
+        id="missions"
+        aria-labelledby="missions-title"
+        className="flex flex-col items-center space-y-8"
+      >
+        <h2 id="missions-title" className="text-2xl font-bold text-foreground">
+          Les missions de la branche
+        </h2>
         <BranchMissions missions={branch.missions} />
       </section>
-      <section className="space-y-8" id="team">
-        <h3 className="text-2xl font-bold">Les membres du bureau</h3>
-        {/* Team Members Grid */}
+      <section
+        id="team"
+        aria-labelledby="team-title"
+        className="flex flex-col items-center space-y-8"
+      >
+        <h2 id="team-title" className="text-2xl font-bold text-foreground">
+          Les membres du bureau
+        </h2>
         <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
           {branch.responsibles.map((member, index) => {
             const imageUrl =
@@ -57,7 +93,7 @@ export default async function BranchPage({
             return (
               <div
                 key={index}
-                className="text-center group transition-all duration-300 hover:scale-[1.02]"
+                className="text-center transition-all duration-300 group hover:scale-[1.02]"
               >
                 <div className="overflow-hidden mb-4 rounded-full aspect-square">
                   <BlurFade className="flex justify-center items-center w-full h-full">
@@ -66,13 +102,13 @@ export default async function BranchPage({
                       alt={`${member.name} - ${member.role}`}
                       width={128}
                       height={128}
-                      loading="lazy" // Lazy load the image
-                      quality={75} // Adjust quality for optimization
-                      className="object-cover w-full h-full rounded-full border transition-transform duration-300 z-2 group-hover:scale-95 border-border"
+                      loading="lazy"
+                      quality={75}
+                      className="object-cover w-full h-full rounded-full border transition-transform duration-300 border-border group-hover:scale-95"
                     />
                   </BlurFade>
                 </div>
-                <h3 className="mb-1 text-lg font-semibold text-foreground">
+                <h3 className="text-lg font-semibold text-foreground">
                   {member.name}
                 </h3>
                 <p className="text-sm text-muted-foreground">{member.role}</p>
@@ -81,10 +117,16 @@ export default async function BranchPage({
           })}
         </div>
       </section>
-      <section className="flex flex-col items-center space-y-8" id="contact">
-        <h3 className="text-2xl font-bold">Contact</h3>
+      <section
+        id="contact"
+        aria-labelledby="contact-title"
+        className="space-y-8"
+      >
+        <h2 id="contact-title" className="text-2xl font-bold text-foreground">
+          Contact
+        </h2>
         <div className="flex flex-col items-center space-y-4">
-          <div>
+          <div className="space-y-2">
             <p className="text-lg text-muted-foreground">
               <Contact label="Téléphone" type="tel" value="418-123-4567-890" />
             </p>
@@ -96,14 +138,22 @@ export default async function BranchPage({
               />
             </p>
           </div>
-          <div className="flex space-x-2">
-            <Link href={"/"} target="_blank" className="text-lg text-primary">
+          <div className="flex space-x-4">
+            <Link
+              href="/"
+              target="_blank"
+              className="transition-colors text-primary hover:text-primary/80"
+              aria-label="Page Facebook"
+            >
               <Facebook />
-              <span className="sr-only">Facebook</span>
             </Link>
-            <Link href={"/"} target="_blank" className="text-lg text-primary">
+            <Link
+              href="/"
+              target="_blank"
+              className="transition-colors text-primary hover:text-primary/80"
+              aria-label="Page Instagram"
+            >
               <Instagram />
-              <span className="sr-only">Instagram</span>
             </Link>
           </div>
         </div>

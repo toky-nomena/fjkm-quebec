@@ -28,16 +28,15 @@ export const Contact = ({ value, label, type, className }: Contact) => {
   };
 
   return (
-    <div className={cn("", className)}>
-      <Link
-        href={getHref()}
-        target={type === "url" ? "_blank" : undefined} // Open URL in a new tab
-        rel={type === "url" ? "noopener noreferrer" : undefined} // Security for external links
-      >
-        <span>
-          {label}: <strong className="hover:underline">{value}</strong>
-        </span>
-      </Link>
-    </div>
+    <Link
+      className={className}
+      href={getHref()}
+      target={type === "url" ? "_blank" : undefined} // Open URL in a new tab
+      rel={type === "url" ? "noopener noreferrer" : undefined} // Security for external links
+    >
+      <span>
+        {label}: <strong className="hover:underline">{value}</strong>
+      </span>
+    </Link>
   );
 };

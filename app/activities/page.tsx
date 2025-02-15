@@ -12,8 +12,9 @@ export default async function ActivitiesPage() {
       <div className="space-y-4 w-full">
         <Title className="text-center">Nos activités</Title>
         <p className="mx-auto max-w-[42rem] leading-normal text-muted-foreground sm:text-xl sm:leading-8 text-center">
-          Découvrez les événements et activités à venir prochainement de la
-          communauté FJKMQuébec
+          Rejoignez-nous dans notre mission de foi, de service et de communauté.
+          Découvrez les moments qui nous rassemblent, nous inspirent et nous
+          permettent de grandir ensemble dans notre foi.
         </p>
       </div>
       <div className="w-full">

@@ -4,7 +4,7 @@ export async function getBranches() {
       name: "Sampana Sekoly Alahady",
       acronym: "SSA",
       slug: "sampana-sekoly-alahady",
-      icon: "📚",
+      icon: "book-open",
       mission:
         "Annoncer l'Évangile et encourager les croyants à travailler pour l'évangélisation et le service.",
       missions: [
@@ -48,7 +48,7 @@ export async function getBranches() {
       name: "Sampana Fifohazana",
       acronym: "SAFIF",
       slug: "sampana-fifohazana",
-      icon: "🙏",
+      icon: "zap",
       mission:
         "Diriger les ministères de réveil et de guérison de l'église à travers un éveil spirituel.",
       missions: [
@@ -91,7 +91,7 @@ export async function getBranches() {
       name: "Sampana Mpanazava sy Tily",
       acronym: "SAMPATI",
       slug: "sampana-mpanazava-sy-tily",
-      icon: "🏕️",
+      icon: "tent",
       mission:
         "Promouvoir le leadership et le développement personnel à travers les activités de scoutisme.",
       missions: [
@@ -134,7 +134,7 @@ export async function getBranches() {
       name: "Sampana Dorkasy",
       acronym: "DORKASY",
       slug: "sampana-dorkasy",
-      icon: "❤️",
+      icon: "heart",
       mission:
         "Soutenir l'église et la communauté par des actes de bonté et de service.",
       missions: [
@@ -177,7 +177,7 @@ export async function getBranches() {
       name: "Sampana Lehilahy Kristiana",
       acronym: "SLK",
       slug: "sampana-lehilahy-kristiana",
-      icon: "👨",
+      icon: "users",
       mission:
         "Guider les hommes chrétiens dans leur croissance spirituelle et leurs responsabilités.",
       missions: [
@@ -220,7 +220,7 @@ export async function getBranches() {
       name: "Sampana Tanora Kristiana",
       acronym: "STK",
       slug: "sampana-tanora-kristiana",
-      icon: "🌟",
+      icon: "star",
       mission:
         "Engager les jeunes dans l'église et les accompagner dans leur cheminement de foi.",
       missions: [
@@ -263,7 +263,7 @@ export async function getBranches() {
       name: "Fikambanan'ny Mpitendry Zavamaneno",
       acronym: "FIMPIZ",
       slug: "fikambanany-mpitendry-zavamaneno",
-      icon: "🎵",
+      icon: "music",
       mission:
         "Unir et soutenir les musiciens dans leur service pour la gloire de Dieu.",
       missions: [
@@ -306,7 +306,7 @@ export async function getBranches() {
       name: "Asa sy Fitoriana ny Filazantsara",
       acronym: "AFF",
       slug: "asa-sy-fitoriana-ny-filazantsara",
-      icon: "🌍",
+      icon: "globe",
       mission:
         "Annoncer l'Évangile et encourager les croyants à travailler pour l'évangélisation et le service.",
       missions: [
@@ -350,7 +350,7 @@ export async function getBranches() {
       name: "Antoko Mpihira Miako Fiderana",
       acronym: "MIAKO-FIDERANA",
       slug: "antoko-mpihira-miako-fiderana",
-      icon: "🎤",
+      icon: "mic",
       mission:
         "Glorifier Dieu à travers la musique et conduire la congrégation dans la louange.",
       missions: [

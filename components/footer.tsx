@@ -28,7 +28,7 @@ export default async function Footer() {
       links: [
         { name: "Mofon'aina", href: "/verses" },
         { name: "Agenda", href: "/agenda" },
-        { name: "Activiés", href: "/activities" },
+        { name: "Activités", href: "/activities" },
         { name: "Contact Us", href: "/contact" },
       ],
     },
@@ -54,12 +54,12 @@ export default async function Footer() {
   ];
 
   return (
-    <footer className="bg-background/10 border-t">
-      <div className="container mx-auto py-12">
+    <footer className="border-t bg-background/10">
+      <div className="container py-12 mx-auto">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
           {footerSections.map((section) => (
             <div key={section.title}>
-              <h2 className="text-sm font-bold mb-4 uppercase text-primary">
+              <h2 className="mb-4 text-sm font-bold uppercase text-primary">
                 {section.title}
               </h2>
               <ul className="space-y-3">
@@ -77,7 +77,7 @@ export default async function Footer() {
             </div>
           ))}
         </div>
-        <div className="mt-8 pt-8 border-t flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="flex flex-col gap-4 justify-between items-center pt-8 mt-8 border-t md:flex-row">
           <p className="text-sm">© 2025 FJKM Québec. Tout droits reservés.</p>
           <div className="flex space-x-6">
             <Link href="https://instagram.com/fjkm-quebec" target="_blank">

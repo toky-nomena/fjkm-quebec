@@ -13,7 +13,7 @@ import { usePathname } from "next/navigation";
 const navItems = [
   { name: "Activités", href: "/activities" },
   { name: "Branches", href: "/branches" },
-  { name: "Blog", href: "/blog" },
+  { name: "Histoire", href: "/history" },
 ];
 
 export default function Header() {
@@ -66,7 +66,7 @@ export default function Header() {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <nav className="absolute left-0 right-0 md:hidden bg-background shadow-lg">
+          <nav className="absolute right-0 left-0 shadow-lg md:hidden bg-background">
             {navItems.map((item) => (
               <Link
                 key={item.href}
