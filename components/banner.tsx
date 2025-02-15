@@ -2,8 +2,13 @@ import Link from "next/link";
 
 export function Banner() {
   return (
-    <div className="px-4 py-3 text-xs text-center text-blue-500 bg-blue-500/10">
-      <Link href="/whats-new">Culte du Dimanche 15 Fevrier 2025</Link>
+    <div className="px-4 py-3 text-center text-white bg-primary">
+      <Link href="/whats-new" className="transition-colors hover:underline">
+        Culte du Dimanche 15 Fevrier 2025 au{" "}
+        <strong className="font-bold">
+          222 Av. Ducharme, Québec, QC G1M 2H3
+        </strong>
+      </Link>
     </div>
   );
 }

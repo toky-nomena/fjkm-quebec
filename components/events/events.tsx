@@ -1,24 +1,19 @@
-import { ActivitySimpleItem } from "../activities/activity-simple-item";
-import { getEvents } from "./event-action";
+import { getActivities } from "../activities/activities-action";
+import { BlurFade } from "../magicui/blur-fade";
 
 export async function Events() {
-  const events = await getEvents();
+  const events = await getActivities();
 
   return (
-    <div className="overflow-y-scroll p-4 mx-auto space-y-4 w-full bg-transparent text-foreground">
-      <header className="flex sticky top-0 justify-between items-center">
-        <h1 className="text-xl font-bold">Annonces</h1>
-      </header>
-      <div className="space-y-4">
-        {events.map((event) => (
-          <div
-            key={event.id}
-            className="p-4 rounded-lg border border-gray-200 shadow-sm dark:border-gray-700"
-          >
-            <ActivitySimpleItem activity={event} />
+    <div className="space-y-6">
+      {events.slice(0, 3).map((event, index) => (
+        <BlurFade delay={0.1 * index} className="" key={event.id} inView>
+          <div className="space-y-2 border-b pb-6">
+            <h2 className="text-xl md:text-2xl font-bold">{event.title}</h2>
+            <p className="text-lg leading-relaxed">{event.description}</p>
           </div>
-        ))}
-      </div>
+        </BlurFade>
+      ))}
     </div>
   );
 }

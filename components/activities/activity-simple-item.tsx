@@ -1,5 +1,5 @@
 import Link from "next/link";
-
+import { MapPin, Clock } from "lucide-react";
 import { parseISO, format } from "date-fns";
 import { fr } from "date-fns/locale";
 
@@ -28,14 +28,23 @@ const formatActivityDate = (dateString: string) => {
 
 export function ActivitySimpleItem({ activity }: ActivityItemProps) {
   return (
-    <div className="flex-1">
-      <div className="mb-1 text-sm text-slate-600 dark:text-slate-300">
-        <span className="font-bold">{formatActivityDate(activity.date)}</span>{" "}
-        de {activity.startTime} à {activity.endTime}
-      </div>
-      <div className="mb-2 text-xl font-semibold text-gray-900 dark:text-white">
+    <div className="relative p-4 space-y-3 rounded-xl transition-colors duration-300 group bg-primary/5 hover:bg-primary/10">
+      <h3
+        className="text-xl font-bold text-gray-800 transition-colors duration-300 dark:text-white group-hover:text-primary"
+        id={`activity-${activity.id}`}
+      >
         {activity.title}
+      </h3>
+
+      <div className="flex gap-2 items-center text-sm text-gray-600 dark:text-gray-300">
+        <Clock className="w-4 h-4 text-primary" />
+        <span className="font-medium">{formatActivityDate(activity.date)}</span>
+        <span className="mx-1 opacity-50">•</span>
+        <span>
+          {activity.startTime} - {activity.endTime}
+        </span>
       </div>
+
       {activity.location && (
         <Link
           href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
@@ -43,9 +52,12 @@ export function ActivitySimpleItem({ activity }: ActivityItemProps) {
           )}`}
           target="_blank"
           rel="noopener noreferrer"
-          className="block mb-2 text-blue-600 dark:text-blue-400 hover:underline"
+          className="flex gap-2 items-center text-gray-600 transition-colors duration-300 dark:text-gray-300 hover:text-primary"
         >
-          {activity.location}
+          <MapPin className="w-4 h-4" />
+          <span className="underline decoration-primary/50 hover:decoration-primary">
+            {activity.location}
+          </span>
         </Link>
       )}
     </div>

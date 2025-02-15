@@ -4,7 +4,7 @@ export default function BlogPage() {
   return (
     <section
       id="programs"
-      className="container flex min-h-[calc(100vh-3.5rem)] max-w-screen-2xl flex-col items-center justify-center space-y-16 py-24 md:py-32"
+      className="flex flex-col items-center justify-center space-y-16 py-24 md:py-32"
     >
       <div className="space-y-4 w-full">
         <Title className="text-center">Blog</Title>
@@ -12,7 +12,7 @@ export default function BlogPage() {
           Tous les articles du blog
         </p>
       </div>
-      <div className="w-full max-w-4xl"></div>
+      <div className="w-full"></div>
     </section>
   );
 }

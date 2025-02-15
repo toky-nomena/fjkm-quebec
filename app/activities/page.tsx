@@ -7,16 +7,17 @@ export default async function ActivitiesPage() {
   return (
     <section
       id="activites"
-      className="container flex min-h-[calc(100vh-3.5rem)] max-w-screen-2xl flex-col items-center justify-center space-y-16 py-24 md:py-32"
+      className="flex flex-col justify-center items-center space-y-16"
     >
       <div className="space-y-4 w-full">
         <Title className="text-center">Nos activités</Title>
         <p className="mx-auto max-w-[42rem] leading-normal text-muted-foreground sm:text-xl sm:leading-8 text-center">
-          Découvrez les événements et activités à venir prochainement de la
-          communauté FJKMQuébec
+          Rejoignez-nous dans notre mission de foi, de service et de communauté.
+          Découvrez les moments qui nous rassemblent, nous inspirent et nous
+          permettent de grandir ensemble dans notre foi.
         </p>
       </div>
-      <div className="w-full max-w-4xl">
+      <div className="w-full">
         <Suspense fallback={<Spinner />}>
           <Activities />
         </Suspense>
