@@ -1,7 +1,7 @@
 import { Check } from "lucide-react";
 
 interface BranchMissionsProps {
-  missions?: string[];
+  readonly missions: string[];
 }
 
 export default function BranchMissions({ missions = [] }: BranchMissionsProps) {

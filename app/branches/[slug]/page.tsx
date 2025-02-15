@@ -46,9 +46,11 @@ export default async function BranchPage({
           <Title className="text-3xl font-bold text-foreground">
             {branch.name}
           </Title>
-          <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
-            {branch.mission}
-          </p>
+          <BlurFade direction="down">
+            <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
+              {branch.mission}
+            </p>
+          </BlurFade>
         </div>
       </header>
       <section
@@ -58,13 +60,13 @@ export default async function BranchPage({
       >
         <blockquote className="relative">
           <span className="absolute -left-4 text-4xl opacity-50 text-muted-foreground">
-            "
+            “
           </span>
           <em className="text-base italic leading-relaxed text-muted-foreground">
             {branch.verse}
           </em>
           <span className="absolute -right-4 text-4xl opacity-50 text-muted-foreground">
-            "
+            ”
           </span>
         </blockquote>
       </section>
