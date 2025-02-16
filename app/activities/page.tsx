@@ -1,5 +1,5 @@
 import Activities from "@/components/activities/activities";
-import Activities2 from "@/components/activities/ativities2";
+import Activities2 from "@/components/activities/activities2";
 import { Spinner } from "@/components/spinner";
 import { Title } from "@/components/ui/title";
 import { Suspense } from "react";
@@ -18,11 +18,9 @@ export default async function ActivitiesPage() {
           permettent de grandir ensemble dans notre foi.
         </p>
       </div>
-      <div className="w-full">
-        <Suspense fallback={<Spinner />}>
-          <Activities2 />
-        </Suspense>
-      </div>
+      <Suspense fallback={<Spinner />}>
+        <Activities2 />
+      </Suspense>
     </section>
   );
 }

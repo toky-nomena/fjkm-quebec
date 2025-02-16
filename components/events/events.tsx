@@ -1,17 +1,17 @@
+import Link from "next/link";
 import { getActivities } from "../activities/activities-action";
 import { BlurFade } from "../magicui/blur-fade";
+import Image from "next/image";
+import { EventItem } from "../activities/activities2";
 
 export async function Events() {
   const events = await getActivities();
 
   return (
-    <div className="space-y-6">
-      {events.slice(0, 3).map((event, index) => (
+    <div className="space-y-4">
+      {events.map((event, index) => (
         <BlurFade delay={0.1 * index} className="" key={event.id} inView>
-          <div className="space-y-2 border-b pb-6">
-            <h2 className="text-xl md:text-2xl font-bold">{event.title}</h2>
-            <p className="text-lg leading-relaxed">{event.description}</p>
-          </div>
+          <EventItem key={event.id} event={event} />
         </BlurFade>
       ))}
     </div>

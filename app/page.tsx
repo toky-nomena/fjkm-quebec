@@ -1,6 +1,5 @@
 import { ArrowRight } from "lucide-react";
 import { Suspense } from "react";
-import Image from "next/image";
 
 import { Events } from "@/components/events/events";
 import { ButtonLink } from "@/components/link/button-link";
@@ -8,9 +7,9 @@ import { BlurFade } from "@/components/magicui/blur-fade";
 
 export default function MainPage() {
   return (
-    <div className="grid grid-cols-1 gap-12 px-4 py-12 mx-auto md:grid-cols-3 md:gap-16">
+    <div className="grid grid-cols-1 gap-12 py-12 mx-auto xl:grid-cols-5 md:gap-16">
       {/* Left Panel */}
-      <div className="space-y-10 md:col-span-2">
+      <div className="space-y-10 md:col-span-3">
         <header className="space-y-4">
           <h2 className="text-xl font-medium tracking-wide text-muted-foreground md:text-2xl">
             Les mots du Pasteur
@@ -67,34 +66,53 @@ export default function MainPage() {
           </div>
         </BlurFade>
 
-        <div className="flex gap-6 items-center rounded-2xl transition-all duration-300 bg-primary/5">
-          <div className="flex justify-center items-center w-20 h-20 rounded-full ring-4 transition-all sm:w-24 md:w-32 sm:h-24 md:h-32 bg-primary/10 ring-primary/20 hover:ring-primary/40">
-            <Image
-              src={"/images/boy.png"}
-              alt="Pasteur"
-              width={256}
-              height={256}
-              loading="lazy"
-              quality={75}
-              className="object-cover w-full h-full rounded-full border border-white transition-transform duration-300 hover:scale-105"
-            />
-          </div>
-          <div className="space-y-2">
-            <h2 className="text-sm font-bold text-gray-800 sm:text-xl md:text-2xl dark:text-white">
+        <div
+          className="flex flex-col items-center space-y-4 text-center md:flex-row md:items-center md:space-x-6 md:space-y-0 md:text-left"
+          role="region"
+          aria-labelledby="pastor-section-heading"
+        >
+          <img
+            src="/images/pastor.jpg"
+            alt="Portrait du Pasteur Rakotondrabe Ndrianja"
+            className="object-cover w-24 h-24 rounded-full ring-2 ring-primary/20"
+            role="img"
+            aria-describedby="pastor-description"
+          />
+          <div className="flex flex-col space-y-1">
+            <h1
+              id="pastor-section-heading"
+              className="text-xl font-bold text-gray-900 dark:text-white"
+            >
               Reverand Dr. Rakotondrabe Ndrianja
-            </h2>
-            <p className="text-xs text-gray-600 sm:text-sm dark:text-gray-300">
+            </h1>
+            <p
+              id="pastor-description"
+              className="text-sm text-gray-600 dark:text-gray-300"
+            >
               Pasteur de la FJKM Quebec
             </p>
-            <p className="text-xs text-gray-600 sm:text-sm dark:text-gray-300">
+            <time
+              dateTime="2025-02-09"
+              className="text-xs text-gray-500 dark:text-gray-400"
+            >
               9 Fevrier 2025
-            </p>
+            </time>
           </div>
         </div>
       </div>
 
       {/* Right Panel */}
-      <div className="space-y-8">
+      <div className="space-y-6 md:col-span-2">
+        <div className="flex justify-between items-center">
+          <h2 className="text-xl font-bold md:text-2xl">Nos activités</h2>
+          <ButtonLink
+            href="/activities"
+            className="justify-center font-semibold bg-primary/10 hover:bg-primary/20 text-primary"
+          >
+            Voir plus
+            <ArrowRight className="ml-2 w-4 h-4" />
+          </ButtonLink>
+        </div>
         <Suspense
           fallback={
             <div className="text-center text-gray-600 animate-pulse dark:text-gray-300">
@@ -104,13 +122,6 @@ export default function MainPage() {
         >
           <Events />
         </Suspense>
-        <ButtonLink
-          href="/activities"
-          className="justify-center w-full font-semibold bg-primary/10 hover:bg-primary/20 text-primary"
-        >
-          Voir plus d'événements
-          <ArrowRight className="ml-2 w-5 h-5" />
-        </ButtonLink>
       </div>
     </div>
   );

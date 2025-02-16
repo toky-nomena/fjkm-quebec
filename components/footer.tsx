@@ -44,11 +44,11 @@ export default async function Footer() {
       ],
     },
     {
-      title: "LEGAL",
+      title: "LÉGAL",
       links: [
-        { name: "Privacy Policy", href: "/privacy" },
-        { name: "Licensing", href: "/licensing" },
-        { name: "Terms & Conditions", href: "/terms" },
+        { name: "Politique de Confidentialité", href: "/privacy" },
+        { name: "Licence", href: "/licensing" },
+        { name: "Conditions Générales", href: "/terms" },
       ],
     },
   ];
