@@ -80,13 +80,13 @@ export default async function Footer() {
         <div className="flex flex-col gap-4 justify-between items-center pt-8 mt-8 border-t md:flex-row">
           <p className="text-sm">© 2025 FJKM Québec. Tout droits reservés.</p>
           <div className="flex space-x-6">
+            <Link href="https://www.facebook.com/fjkm.quebec.canada" target="_blank">
+              <Facebook />
+              <span className="sr-only">Facebook</span>
+            </Link>
             <Link href="https://instagram.com/fjkm-quebec" target="_blank">
               <Instagram />
               <span className="sr-only">Instagram</span>
-            </Link>
-            <Link href="https://facebook.com/fjkm-quebec" target="_blank">
-              <Facebook />
-              <span className="sr-only">Facebook</span>
             </Link>
           </div>
         </div>
