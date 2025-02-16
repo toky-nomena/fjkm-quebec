@@ -18,11 +18,9 @@ export default async function ActivitiesPage() {
           permettent de grandir ensemble dans notre foi.
         </p>
       </div>
-      <div className="w-full">
-        <Suspense fallback={<Spinner />}>
-          <Activities2 />
-        </Suspense>
-      </div>
+      <Suspense fallback={<Spinner />}>
+        <Activities2 />
+      </Suspense>
     </section>
   );
 }

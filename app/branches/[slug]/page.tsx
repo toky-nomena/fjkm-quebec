@@ -25,7 +25,7 @@ export default async function BranchPage({
   }
 
   return (
-    <div className="container px-4 py-6 mx-auto space-y-16 max-w-6xl text-center">
+    <div className="space-y-16 text-center">
       <header className="space-y-4">
         <div className="flex justify-center mb-4">
           <div className="flex justify-center items-center w-32 h-32 rounded-full bg-primary/10">

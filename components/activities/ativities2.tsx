@@ -98,12 +98,12 @@ const events: Event[] = [
 
 const EventItem = memo(({ event }: { event: Event }) => (
   <div
-    className="p-4 bg-white rounded-lg border border-gray-100 shadow-sm transition-all duration-300 dark:border-gray-800 dark:bg-gray-900 hover:shadow-md hover:border-primary/20"
+    className="py-4 bg-white rounded-lg border border-gray-200 shadow-sm transition-all duration-300 dark:bg-gray-900 dark:border-gray-700 hover:shadow-md hover:border-primary/20 dark:hover:border-primary/30"
     role="article"
     aria-labelledby={`event-title-${event.id}`}
     data-category={event.category?.toLowerCase()}
   >
-    <div className="flex gap-4 items-start">
+    <div className="flex gap-4 items-center">
       <div
         className="flex flex-col items-center justify-center min-w-[60px] text-center"
         aria-hidden="true"
@@ -129,7 +129,6 @@ const EventItem = memo(({ event }: { event: Event }) => (
           {event.title}
         </h3>
         <div className="flex items-center mt-1 space-x-2">
-          <MapPin className="w-4 h-4 text-primary/70" aria-hidden="true" />
           <p
             className="text-sm text-gray-500 truncate dark:text-gray-400"
             aria-label={`Lieu: ${event.location}`}
@@ -155,11 +154,7 @@ const EventItem = memo(({ event }: { event: Event }) => (
 
 export default function Activities2() {
   return (
-    <div
-      className="p-4 mx-auto space-y-4 max-w-6xl"
-      aria-live="polite"
-      aria-atomic="true"
-    >
+    <div className="space-y-4" aria-live="polite" aria-atomic="true">
       <h2
         className="mb-4 text-2xl font-bold text-gray-900 sr-only dark:text-white"
         id="events-heading"
@@ -167,7 +162,7 @@ export default function Activities2() {
         Événements de l'Église FJKM Québec
       </h2>
       <div
-        className="grid grid-cols-1 gap-4 md:grid-cols-2"
+        className="grid grid-cols-1 gap-3 md:grid-cols-2"
         role="list"
         aria-labelledby="events-heading"
         aria-describedby="events-description"
