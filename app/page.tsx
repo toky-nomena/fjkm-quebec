@@ -83,7 +83,7 @@ export default function MainPage() {
               id="pastor-section-heading"
               className="text-xl font-bold text-gray-900 dark:text-white"
             >
-              Reverand Dr. Rakotondrabe Ndrianja
+              Pasteur John Doe
             </h1>
             <p
               id="pastor-description"
