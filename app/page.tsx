@@ -1,6 +1,5 @@
 import { ArrowRight } from "lucide-react";
 import { Suspense } from "react";
-import Image from "next/image";
 
 import { Events } from "@/components/events/events";
 import { ButtonLink } from "@/components/link/button-link";
@@ -8,9 +7,9 @@ import { BlurFade } from "@/components/magicui/blur-fade";
 
 export default function MainPage() {
   return (
-    <div className="grid grid-cols-1 gap-12 px-4 py-12 mx-auto md:grid-cols-3 md:gap-16">
+    <div className="grid grid-cols-1 gap-12 py-12 mx-auto xl:grid-cols-5 md:gap-16">
       {/* Left Panel */}
-      <div className="space-y-10 md:col-span-2">
+      <div className="space-y-10 md:col-span-3">
         <header className="space-y-4">
           <h2 className="text-xl font-medium tracking-wide text-muted-foreground md:text-2xl">
             Les mots du Pasteur
@@ -103,7 +102,17 @@ export default function MainPage() {
       </div>
 
       {/* Right Panel */}
-      <div className="space-y-8">
+      <div className="space-y-6 md:col-span-2">
+        <div className="flex justify-between items-center">
+          <h2 className="text-xl font-bold md:text-2xl">Nos activités</h2>
+          <ButtonLink
+            href="/activities"
+            className="justify-center font-semibold bg-primary/10 hover:bg-primary/20 text-primary"
+          >
+            Voir plus
+            <ArrowRight className="ml-2 w-4 h-4" />
+          </ButtonLink>
+        </div>
         <Suspense
           fallback={
             <div className="text-center text-gray-600 animate-pulse dark:text-gray-300">
@@ -113,13 +122,6 @@ export default function MainPage() {
         >
           <Events />
         </Suspense>
-        <ButtonLink
-          href="/activities"
-          className="justify-center w-full font-semibold bg-primary/10 hover:bg-primary/20 text-primary"
-        >
-          Voir plus d'événements
-          <ArrowRight className="ml-2 w-5 h-5" />
-        </ButtonLink>
       </div>
     </div>
   );
