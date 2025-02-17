@@ -120,7 +120,7 @@ export default function MainPage() {
         </div>
         <Suspense
           fallback={
-            <div className="text-center text-gray-600 animate-pulse dark:text-gray-300">
+            <div className="text-gray-600 animate-pulse dark:text-gray-300">
               Chargement des événements...
             </div>
           }

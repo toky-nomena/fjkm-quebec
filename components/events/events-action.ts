@@ -1,4 +1,4 @@
-import { EventDetails } from "../activities/activity";
+import { EventDetails } from "./event";
 
 export const events: EventDetails[] = [
   {
@@ -14,7 +14,7 @@ export const events: EventDetails[] = [
   },
   {
     id: "2",
-    date: "2025-02-05",
+    date: "2025-03-15",
     title: "Réunion de Bénévoles",
     description:
       "Réunion hebdomadaire pour coordonner les projets caritatifs et les événements à venir",
@@ -28,7 +28,7 @@ export const events: EventDetails[] = [
   },
   {
     id: "3",
-    date: "2025-02-05",
+    date: "2025-04-22",
     title: "Déjeuner Partage",
     description:
       "Moment convivial pour partager un repas avec les membres de la communauté",
@@ -42,7 +42,7 @@ export const events: EventDetails[] = [
   },
   {
     id: "4",
-    date: "2025-02-05",
+    date: "2025-05-10",
     title: "Atelier Biblique",
     description:
       "Étude collective des Écritures et discussions autour de thèmes bibliques",
@@ -53,7 +53,7 @@ export const events: EventDetails[] = [
   },
   {
     id: "5",
-    date: "2025-02-05",
+    date: "2025-06-18",
     title: "Soirée Louange",
     description:
       "Un moment de chants et de prières pour célébrer et se ressourcer spirituellement",
@@ -65,5 +65,8 @@ export const events: EventDetails[] = [
 ];
 
 export async function getEvents() {
-  return events;
+  await new Promise((resolve) => setTimeout(resolve, 1000));
+  return events.sort(
+    (a, b) => new Date(a.date).getTime() - new Date(b.date).getTime()
+  );
 }

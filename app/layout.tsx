@@ -24,7 +24,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       <body
         className={`${font.className} bg-background text-foreground antialiased`}
       >
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+        <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
           <MouseMoveEffect />
           <div className="relative min-h-screen">
             <Bg />

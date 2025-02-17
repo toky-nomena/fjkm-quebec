@@ -55,32 +55,36 @@ export default async function Footer() {
 
   return (
     <footer className="border-t bg-background/10">
-      <div className="container py-12 mx-auto">
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
-          {footerSections.map((section) => (
-            <div key={section.title}>
-              <h2 className="mb-4 text-sm font-bold uppercase text-primary">
-                {section.title}
-              </h2>
-              <ul className="space-y-3">
-                {section.links.map((link) => (
-                  <li key={link.name}>
-                    <ActiveLink
-                      href={link.href}
-                      className="text-sm hover:text-primary"
-                    >
-                      {link.name}
-                    </ActiveLink>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
-        <div className="flex flex-col gap-4 justify-between items-center pt-8 mt-8 border-t md:flex-row">
+      <div className="container grid grid-cols-1 gap-8 py-10 mx-auto md:grid-cols-2 lg:grid-cols-4">
+        {footerSections.map((section) => (
+          <div key={section.title}>
+            <h2 className="mb-4 text-sm font-bold uppercase text-primary">
+              {section.title}
+            </h2>
+            <ul className="space-y-3">
+              {section.links.map((link) => (
+                <li key={link.name}>
+                  <ActiveLink
+                    href={link.href}
+                    className="text-sm hover:text-primary"
+                  >
+                    {link.name}
+                  </ActiveLink>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+
+      <div className="border-t">
+        <div className="container flex flex-col gap-4 justify-between items-center py-6 mx-auto md:flex-row">
           <p className="text-sm">© 2025 FJKM Québec. Tout droits reservés.</p>
-          <div className="flex space-x-6">
-            <Link href="https://www.facebook.com/fjkm.quebec.canada" target="_blank">
+          <div className="flex space-x-3">
+            <Link
+              href="https://www.facebook.com/fjkm.quebec.canada"
+              target="_blank"
+            >
               <Facebook />
               <span className="sr-only">Facebook</span>
             </Link>
