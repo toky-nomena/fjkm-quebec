@@ -1,5 +1,5 @@
 import { EventItem } from "../events/event-item";
-import { getEvents } from "../events/events-action";
+import { getEvents } from "../events/activities-action";
 
 export default async function Activities2() {
   const events = await getEvents();

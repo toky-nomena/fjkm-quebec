@@ -58,7 +58,7 @@ export function CulteDetails({ details, className }: CulteDetailsProps) {
   return (
     <div
       className={cn(
-        "overflow-hidden bg-white rounded-2xl shadow-lg dark:bg-gray-900",
+        "overflow-hidden bg-white shadow-lg dark:bg-gray-900",
         className
       )}
     >
@@ -151,8 +151,10 @@ export function CulteDetails({ details, className }: CulteDetailsProps) {
                   rel="noopener noreferrer"
                   className="flex items-center space-x-1 text-sm text-gray-700 transition-colors hover:text-primary dark:text-gray-300 dark:hover:text-primary"
                 >
-                  <platform.icon className="w-4 h-4" />
-                  <span>{platform.name}</span>
+                  <platform.icon className="w-6 h-6" />
+                  <span className="font-semibold whitespace-nowrap">
+                    {platform.name}
+                  </span>
                 </Link>
               ))}
             </div>

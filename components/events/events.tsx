@@ -1,4 +1,4 @@
-import { getEvents } from "./events-action";
+import { getEvents } from "./activities-action";
 import { BlurFade } from "../magicui/blur-fade";
 import { EventItem } from "./event-item";
 
