@@ -1,4 +1,3 @@
-import Activities from "@/components/activities/activities";
 import Activities2 from "@/components/activities/activities2";
 import { Spinner } from "@/components/spinner";
 import { Title } from "@/components/ui/title";

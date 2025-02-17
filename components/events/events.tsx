@@ -1,7 +1,5 @@
-import Link from "next/link";
 import { getActivities } from "../activities/activities-action";
 import { BlurFade } from "../magicui/blur-fade";
-import Image from "next/image";
 import { EventItem } from "../activities/activities2";
 
 export async function Events() {
