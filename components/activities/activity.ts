@@ -1,5 +1,5 @@
 // components/Activity.tsx
-export interface Activity {
+export interface EventDetails {
   id: string;
   date: string;
   title: string;

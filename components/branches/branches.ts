@@ -1,3 +1,8 @@
+export async function getBranchBySlug(slug: string) {
+  const branches = await getBranches();
+  return branches.find((branch) => branch.slug === slug);
+}
+
 export async function getBranches() {
   return [
     {

@@ -2,9 +2,9 @@ import { memo } from "react";
 import { MoreVertical } from "lucide-react";
 import Link from "next/link";
 import { GoogleMapsEmbed } from "@next/third-parties/google";
-import { Activity } from "../activities/activity";
+import { EventDetails } from "../activities/activity";
 
-export const EventItem = memo(({ event }: { event: Activity }) => {
+export const EventItem = memo(({ event }: { event: EventDetails }) => {
   const eventDate = new Date(event.date);
   const month = eventDate
     .toLocaleString("fr-FR", { month: "short" })
@@ -13,7 +13,7 @@ export const EventItem = memo(({ event }: { event: Activity }) => {
 
   return (
     <div
-      className="py-4 bg-white rounded-lg border-gray-200 shadow-sm transition-all duration-300 border-1 dark:bg-gray-900 dark:border-gray-700 hover:shadow-md hover:border-primary/20 dark:hover:border-primary/30 focus-within:ring-2 focus-within:ring-primary/50 focus-within:border-primary"
+      className="py-4 bg-white rounded-lg border-gray-600 shadow-sm transition-all duration-300 border-1 dark:bg-gray-900 dark:border-gray-700 hover:shadow-md hover:border-primary/20 dark:hover:border-primary/30 focus-within:ring-2 focus-within:ring-primary/50 focus-within:border-primary"
       role="article"
       aria-labelledby={`event-title-${event.id}`}
     >

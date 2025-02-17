@@ -8,15 +8,14 @@ import { ThemeProvider } from "@/components/theme/theme-provider";
 import Footer from "@/components/footer";
 import { Bg } from "@/components/ui/bg";
 import Header from "@/components/header/header";
-import { Banner } from "@/components/banner";
 import { BackToTop } from "@/components/ui/back-to-top";
 import { Theme } from "@/components/theme";
 
 const font = Geist({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "FJKM Quebec - Church",
-  description: "FJKM Quebec",
+  title: "FJKM Québec - Church",
+  description: "FJKM Québec",
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
@@ -30,7 +29,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           <div className="relative min-h-screen">
             <Bg />
             <div className="relative z-10">
-              <Banner />
               <Header />
               <main className="container flex-1 mx-auto my-16 space-y-10 reveal">
                 <Theme />
