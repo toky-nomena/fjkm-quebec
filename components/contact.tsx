@@ -1,4 +1,3 @@
-import { cn } from "@/lib/utils";
 import Link from "next/link";
 
 // Define the Contact interface

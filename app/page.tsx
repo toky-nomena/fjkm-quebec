@@ -1,5 +1,6 @@
 import { ArrowRight } from "lucide-react";
 import { Suspense } from "react";
+import Image from "next/image";
 
 import { Events } from "@/components/events/events";
 import { ButtonLink } from "@/components/link/button-link";
@@ -71,7 +72,7 @@ export default function MainPage() {
           role="region"
           aria-labelledby="pastor-section-heading"
         >
-          <img
+          <Image
             src="/images/pastor.jpg"
             alt="Portrait du Pasteur Rakotondrabe Ndrianja"
             className="object-cover w-24 h-24 rounded-full ring-2 ring-primary/20"

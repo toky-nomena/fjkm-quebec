@@ -1,10 +1,10 @@
 import { memo } from "react";
-import { MoreVertical, MapPin, Calendar } from "lucide-react";
+import { MoreVertical } from "lucide-react";
 import { getActivities } from "./activities-action";
 import { Activity } from "./activity";
 import Link from "next/link";
+
 export const EventItem = memo(({ event }: { event: Activity }) => {
-  // Extract date information from the event
   const eventDate = new Date(event.date);
   const month = eventDate
     .toLocaleString("fr-FR", { month: "short" })

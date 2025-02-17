@@ -1,5 +1,4 @@
 import { getBranches } from "@/components/branches/branches";
-import { get } from "http";
 import { redirect } from "next/navigation";
 
 export default async function BranchesPage() {
