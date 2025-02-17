@@ -1,7 +1,8 @@
-import Activities2 from "@/components/activities/activities2";
+import { Suspense } from "react";
+
+import Activities from "@/components/activities/activities";
 import { Spinner } from "@/components/spinner";
 import { Title } from "@/components/ui/title";
-import { Suspense } from "react";
 
 export default async function ActivitiesPage() {
   return (
@@ -18,7 +19,7 @@ export default async function ActivitiesPage() {
         </p>
       </div>
       <Suspense fallback={<Spinner />}>
-        <Activities2 />
+        <Activities />
       </Suspense>
     </section>
   );

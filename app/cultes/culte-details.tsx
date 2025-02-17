@@ -7,7 +7,9 @@ import {
   Monitor,
   Facebook,
   Youtube,
+  Camera,
 } from "lucide-react";
+import Link from "next/link";
 
 interface CulteDetailsProps {
   className?: string;
@@ -124,25 +126,25 @@ export function CulteDetails({ details, className }: CulteDetailsProps) {
             <div className="text-sm text-gray-600 dark:text-gray-300">
               Diffusion en Direct
             </div>
-            <div className="flex items-center space-x-3">
+            <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
               {[
                 {
+                  icon: Camera,
+                  name: "Zoom",
+                  link: "https://zoom.us/j/fjkmquebec",
+                },
+                {
                   icon: Youtube,
-                  name: "YouTube Live",
+                  name: "YouTube",
                   link: "https://youtube.com/fjkmquebec",
                 },
                 {
                   icon: Facebook,
-                  name: "Facebook Live",
+                  name: "Facebook",
                   link: "https://facebook.com/fjkmquebec",
                 },
-                {
-                  icon: BookOpen,
-                  name: "Zoom Meeting",
-                  link: "https://zoom.us/j/fjkmquebec",
-                },
               ].map((platform, index) => (
-                <a
+                <Link
                   key={index}
                   href={platform.link}
                   target="_blank"
@@ -151,7 +153,7 @@ export function CulteDetails({ details, className }: CulteDetailsProps) {
                 >
                   <platform.icon className="w-4 h-4" />
                   <span>{platform.name}</span>
-                </a>
+                </Link>
               ))}
             </div>
           </div>
