@@ -32,19 +32,11 @@ export default async function BranchPage({
     <div className="grid grid-cols-1 gap-12 mx-auto xl:grid-cols-3 md:gap-16">
       <div className="space-y-16 text-center md:col-span-2">
         <header className="space-y-4">
-          <div className="flex justify-center mb-4">
-            <div className="flex justify-center items-center w-32 h-32 rounded-full bg-primary/10">
-              <span
-                role="img"
-                aria-label={`Icône de ${branch.name}`}
-                className="text-5xl"
-              >
-                <BranchIcon
-                  icon={branch.icon} // Lucide React icon
-                  name={branch.name}
-                />
-              </span>
-            </div>
+          <div className="flex justify-center items-center rounded-full bg-primary/10">
+            <BranchIcon
+              icon={branch.icon} // Lucide React icon
+              name={branch.name}
+            />
           </div>
 
           <div className="space-y-2">
