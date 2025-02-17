@@ -1,19 +1,19 @@
 import { memo } from "react";
 import { MoreVertical } from "lucide-react";
-import { getActivities } from "./activities-action";
-import { Activity } from "./activity";
 import Link from "next/link";
+import { GoogleMapsEmbed } from "@next/third-parties/google";
+import { Activity } from "../activities/activity";
 
 export const EventItem = memo(({ event }: { event: Activity }) => {
   const eventDate = new Date(event.date);
   const month = eventDate
     .toLocaleString("fr-FR", { month: "short" })
     .toUpperCase();
-  const day = eventDate.getDate().toString().padStart(2, "0");
+  const day = eventDate.getDate();
 
   return (
     <div
-      className="py-4 bg-white rounded-lg border border-gray-200 shadow-sm transition-all duration-300 dark:bg-gray-900 dark:border-gray-700 hover:shadow-md hover:border-primary/20 dark:hover:border-primary/30"
+      className="py-4 bg-white rounded-lg border-gray-200 shadow-sm transition-all duration-300 border-1 dark:bg-gray-900 dark:border-gray-700 hover:shadow-md hover:border-primary/20 dark:hover:border-primary/30 focus-within:ring-2 focus-within:ring-primary/50 focus-within:border-primary"
       role="article"
       aria-labelledby={`event-title-${event.id}`}
     >
@@ -63,33 +63,18 @@ export const EventItem = memo(({ event }: { event: Activity }) => {
           />
         </Link>
       </div>
+      {event.location && (
+        <div className="px-2 mt-4">
+          <GoogleMapsEmbed
+            apiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY!}
+            height={250}
+            width="100%"
+            mode="place"
+            q={event.location}
+            style="rounded-lg"
+          />
+        </div>
+      )}
     </div>
   );
 });
-
-export default async function Activities2() {
-  const events = await getActivities();
-  return (
-    <div className="space-y-4" aria-live="polite" aria-atomic="true">
-      <h2
-        className="mb-4 text-2xl font-bold text-gray-900 sr-only dark:text-white"
-        id="events-heading"
-      >
-        Événements de l'Église FJKM Québec
-      </h2>
-      <div
-        className="grid grid-cols-1 gap-3 md:grid-cols-2"
-        role="list"
-        aria-labelledby="events-heading"
-        aria-describedby="events-description"
-      >
-        <p id="events-description" className="sr-only">
-          Liste des événements à venir pour la communauté FJKM Québec
-        </p>
-        {events.map((event) => (
-          <EventItem key={event.id} event={event} />
-        ))}
-      </div>
-    </div>
-  );
-}

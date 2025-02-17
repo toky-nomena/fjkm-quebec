@@ -1,6 +1,6 @@
 import { getActivities } from "../activities/activities-action";
 import { BlurFade } from "../magicui/blur-fade";
-import { EventItem } from "../activities/activities2";
+import { EventItem } from "./event-item";
 
 export async function Events() {
   const events = await getActivities();

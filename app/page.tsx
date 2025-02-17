@@ -73,6 +73,8 @@ export default function MainPage() {
           aria-labelledby="pastor-section-heading"
         >
           <Image
+            width={96}
+            height={96}
             src="/images/pastor.jpg"
             alt="Portrait du Pasteur Rakotondrabe Ndrianja"
             className="object-cover w-24 h-24 rounded-full ring-2 ring-primary/20"
