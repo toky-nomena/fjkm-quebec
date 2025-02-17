@@ -1,6 +1,6 @@
-import { Activity } from "./activity";
+import { EventDetails } from "../activities/activity";
 
-export const activities: Activity[] = [
+export const events: EventDetails[] = [
   {
     id: "1",
     date: "2025-02-05",
@@ -64,6 +64,6 @@ export const activities: Activity[] = [
   },
 ];
 
-export async function getActivities() {
-  return activities;
+export async function getEvents() {
+  return events;
 }

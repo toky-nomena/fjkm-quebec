@@ -5,12 +5,15 @@ import Image from "next/image";
 import { Events } from "@/components/events/events";
 import { ButtonLink } from "@/components/link/button-link";
 import { BlurFade } from "@/components/magicui/blur-fade";
+import Link from "next/link";
 
 export default function MainPage() {
   return (
-    <div className="grid grid-cols-1 gap-12 py-12 mx-auto xl:grid-cols-5 md:gap-16">
+    <div className="flex flex-col gap-12 mx-auto lg:flex-row lg:gap-16">
+      {/* Right Panel */}
+
       {/* Left Panel */}
-      <div className="space-y-10 md:col-span-3">
+      <div className="space-y-10 w-full lg:w-3/5">
         <header className="space-y-4">
           <h2 className="text-xl font-medium tracking-wide text-muted-foreground md:text-2xl">
             Les mots du Pasteur
@@ -92,7 +95,7 @@ export default function MainPage() {
               id="pastor-description"
               className="text-sm text-gray-600 dark:text-gray-300"
             >
-              Pasteur de la FJKM Quebec
+              Pasteur de la FJKM Québec
             </p>
             <time
               dateTime="2025-02-09"
@@ -104,17 +107,16 @@ export default function MainPage() {
         </div>
       </div>
 
-      {/* Right Panel */}
-      <div className="space-y-6 md:col-span-2">
-        <div className="flex justify-between items-center">
+      <div className="w-full lg:w-2/5">
+        <div className="flex justify-between items-center mb-6">
           <h2 className="text-xl font-bold md:text-2xl">Nos activités</h2>
-          <ButtonLink
+          <Link
             href="/activities"
-            className="justify-center font-semibold bg-primary/10 hover:bg-primary/20 text-primary"
+            className="inline-flex justify-center items-center font-semibold bg-primary/10 hover:bg-primary/20 text-primary"
           >
             Voir plus
             <ArrowRight className="ml-2 w-4 h-4" />
-          </ButtonLink>
+          </Link>
         </div>
         <Suspense
           fallback={

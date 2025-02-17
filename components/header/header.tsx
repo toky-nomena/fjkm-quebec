@@ -23,7 +23,7 @@ export default function Header() {
 
   return (
     <header className="shadow sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container px-4 mx-auto">
+      <div className="container mx-auto">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Logo />

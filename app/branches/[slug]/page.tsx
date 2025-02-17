@@ -4,7 +4,7 @@ import Link from "next/link";
 
 import { Contact } from "@/components/contact";
 import { Events } from "@/components/events/events";
-import { getBranches } from "@/components/branches/branches";
+import { getBranchBySlug, getBranches } from "@/components/branches/branches";
 import { BlurFade } from "@/components/magicui/blur-fade";
 import BranchMissions from "./branch-missions";
 import { Title } from "@/components/ui/title";
@@ -22,15 +22,14 @@ export default async function BranchPage({
   params: Promise<{ slug: string }>;
 }) {
   const slug = (await params).slug;
-  const branches = await getBranches();
-  const branch = branches.find((branch) => branch.slug === slug);
+  const branch = await getBranchBySlug(slug);
 
   if (!branch) {
     return notFound();
   }
 
   return (
-    <div className="grid grid-cols-1 gap-12 py-12 mx-auto xl:grid-cols-3 md:gap-16">
+    <div className="grid grid-cols-1 gap-12 mx-auto xl:grid-cols-3 md:gap-16">
       <div className="space-y-16 text-center md:col-span-2">
         <header className="space-y-4">
           <div className="flex justify-center mb-4">

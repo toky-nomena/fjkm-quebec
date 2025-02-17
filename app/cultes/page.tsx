@@ -4,9 +4,9 @@ import { CustomMap } from "./cult-map";
 import { CulteDetails } from "./culte-details";
 
 const culteData = {
-  id: "culte-2025-02-16",
+  id: "culte-2025-02-23",
   title: "Culte du Dimanche",
-  date: "2025-02-17",
+  date: "2025-02-23",
   time: "09:30",
   location: "Église FJKM Québec",
   address: "222 Av. Ducharme, Québec, QC G1M 2H3",
@@ -18,7 +18,7 @@ export default function CultesPage() {
       <BlurFade>
         <header className="space-y-6 text-center">
           <Title className="text-4xl font-extrabold text-foreground">
-            Les Cultes de FJKM
+            Les Cultes de FJKM Québec
           </Title>
           <p className="mx-auto max-w-2xl text-xl font-medium text-muted-foreground">
             Notre communauté est un lieu de rencontre, de communion et de

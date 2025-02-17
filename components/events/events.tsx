@@ -1,9 +1,9 @@
-import { getActivities } from "../activities/activities-action";
+import { getEvents } from "./events-action";
 import { BlurFade } from "../magicui/blur-fade";
 import { EventItem } from "./event-item";
 
 export async function Events() {
-  const events = await getActivities();
+  const events = await getEvents();
 
   return (
     <div className="space-y-4">

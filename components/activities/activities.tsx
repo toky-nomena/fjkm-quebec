@@ -1,8 +1,8 @@
 import { EventItem } from "../events/event-item";
-import { getActivities } from "./activities-action";
+import { getEvents } from "../events/events-action";
 
 export default async function Activities2() {
-  const events = await getActivities();
+  const events = await getEvents();
   return (
     <div className="space-y-4" aria-live="polite" aria-atomic="true">
       <h2
