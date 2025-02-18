@@ -15,6 +15,10 @@ import { BranchIcon } from "./branch-icon";
 import { Suspense } from "react";
 import BranchSelector from "./branch-selector";
 import { BranchResponsibles } from "./branch-responsibles";
+import {
+  EventItemSkeleton,
+  EventItemSkeletonList,
+} from "@/components/events/event-skeleton";
 
 export default async function BranchPage({
   params,
@@ -29,8 +33,9 @@ export default async function BranchPage({
   }
 
   return (
-    <div className="grid grid-cols-1 gap-12 mx-auto xl:grid-cols-3 md:gap-16">
-      <div className="space-y-16 text-center md:col-span-2">
+    <div className="flex flex-col gap-12 lg:flex-row lg:gap-16">
+      {/* Main Content Section */}
+      <div className="space-y-16 w-full text-center lg:w-2/3">
         <header className="space-y-4">
           <div className="flex justify-center items-center rounded-full bg-primary/10">
             <BranchIcon
@@ -53,13 +58,13 @@ export default async function BranchPage({
         <section
           id="verse"
           aria-label="Verset biblique"
-          className="mx-auto max-w-xl"
+          className="flex justify-center items-center px-6 w-full"
         >
-          <blockquote className="relative">
+          <blockquote className="relative max-w-xl">
             <span className="absolute -left-4 text-4xl opacity-50 text-muted-foreground">
               “
             </span>
-            <em className="text-base italic leading-relaxed text-muted-foreground">
+            <em className="text-xl italic leading-relaxed text-muted-foreground">
               {branch.verse}
             </em>
             <span className="absolute -right-4 text-4xl opacity-50 text-muted-foreground">
@@ -140,11 +145,12 @@ export default async function BranchPage({
           <BranchSelector />
         </Suspense>
       </div>
-      <div className="space-y-6 md:col-span-1">
+      {/* Events Section */}
+      <div className="w-full lg:w-1/3">
         <Suspense
           fallback={
-            <div className="text-center text-gray-600 animate-pulse dark:text-gray-300">
-              Chargement des événements...
+            <div className="space-y-4">
+              <EventItemSkeletonList />
             </div>
           }
         >

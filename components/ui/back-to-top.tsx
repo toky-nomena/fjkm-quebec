@@ -26,7 +26,7 @@ export function BackToTop() {
     isVisible && (
       <button
         onClick={scrollToTop}
-        className="fixed right-8 bottom-8 z-50 p-3 rounded-full border transition-all z-80 hover:bg-primary hover:text-primary-foreground border-border bg-background"
+        className="fixed right-8 bottom-20 z-50 p-3 rounded-full border transition-all z-80 hover:bg-primary hover:text-primary-foreground border-border bg-background"
       >
         <ChevronUpIcon className="w-6 h-6" />
       </button>

@@ -1,3 +1,4 @@
+import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 
 export function Theme() {
@@ -13,13 +14,22 @@ export function Theme() {
           </h2>
         </div>
       </div>
-      <div className="p-8 text-white">
-        <h3>Culte du Dimanche</h3>
+      <div className="flex gap-4 justify-between p-8 text-white">
+        <div className="flex-1">
+          <h3>Culte du Dimanche</h3>
+          <Link
+            href="/cultes"
+            className="text-xl font-bold leading-tight hover:underline"
+          >
+            22 Fevrier 2025 à 09h30
+          </Link>
+        </div>
         <Link
           href="/cultes"
-          className="text-xl font-bold leading-tight hover:underline"
+          className="inline-flex justify-center items-center font-semibold bg-primary/10 hover:bg-primary/20 text-primary"
         >
-          22 Fevrier 2025 à 09h30
+          Voir plus
+          <ArrowRight className="ml-2 w-4 h-4" />
         </Link>
       </div>
     </div>

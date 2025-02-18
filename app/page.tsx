@@ -6,6 +6,7 @@ import { Events } from "@/components/events/events";
 import { ButtonLink } from "@/components/link/button-link";
 import { BlurFade } from "@/components/magicui/blur-fade";
 import Link from "next/link";
+import { EventItemSkeletonList } from "@/components/events/event-skeleton";
 
 export default function MainPage() {
   return (
@@ -120,8 +121,8 @@ export default function MainPage() {
         </div>
         <Suspense
           fallback={
-            <div className="text-center text-gray-600 animate-pulse dark:text-gray-300">
-              Chargement des événements...
+            <div className="space-y-4">
+              <EventItemSkeletonList />
             </div>
           }
         >

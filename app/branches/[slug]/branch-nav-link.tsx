@@ -29,7 +29,7 @@ export function BranchNavLink({ branch }: BranchNavLinkProps) {
                     branch-item ${isSelected ? "scale-up" : "scale-down"}
                   `}
     >
-      <div className="relative flex items-center">
+      <div className="flex relative items-center">
         <span>{branch.acronym}</span>
       </div>
     </Link>

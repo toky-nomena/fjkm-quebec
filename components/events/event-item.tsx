@@ -1,10 +1,13 @@
-import { memo } from "react";
-import { MoreVertical } from "lucide-react";
+"use client";
+
+import { memo, useState } from "react";
+import { MoreVertical, MapPin, ChevronDown, ChevronUp } from "lucide-react";
 import Link from "next/link";
 import { GoogleMapsEmbed } from "@next/third-parties/google";
-import { EventDetails } from "../activities/activity";
+import { EventDetails } from "./event";
 
 export const EventItem = memo(({ event }: { event: EventDetails }) => {
+  const [isExpanded, setIsExpanded] = useState(false);
   const eventDate = new Date(event.date);
   const month = eventDate
     .toLocaleString("fr-FR", { month: "short" })
@@ -13,11 +16,11 @@ export const EventItem = memo(({ event }: { event: EventDetails }) => {
 
   return (
     <div
-      className="py-4 bg-white rounded-lg border-gray-600 shadow-sm transition-all duration-300 border-1 dark:bg-gray-900 dark:border-gray-700 hover:shadow-md hover:border-primary/20 dark:hover:border-primary/30 focus-within:ring-2 focus-within:ring-primary/50 focus-within:border-primary"
+      className="bg-white rounded-lg border border-gray-200 shadow-sm transition-all duration-300 dark:bg-gray-900 dark:border-gray-700 hover:shadow-md hover:border-primary/20 dark:hover:border-primary/30"
       role="article"
       aria-labelledby={`event-title-${event.id}`}
     >
-      <div className="flex gap-4 items-center px-2">
+      <div className="flex gap-4 items-center px-4 py-4">
         <div
           className="flex flex-col items-center justify-center min-w-[60px] text-center"
           aria-hidden="true"
@@ -42,37 +45,66 @@ export const EventItem = memo(({ event }: { event: EventDetails }) => {
           >
             {event.title}
           </h3>
-          <div className="flex items-center mt-1 space-x-2">
-            <p
-              className="text-sm text-gray-500 truncate dark:text-gray-400"
-              aria-label={`Lieu: ${event.location}`}
-            >
-              {event.location}
-            </p>
-          </div>
+          {event.location && (
+            <div className="flex items-center mt-1 space-x-2">
+              <div
+                className="flex items-center max-w-full text-sm text-gray-500 truncate dark:text-gray-400"
+                aria-label={`Lieu: ${event.location}`}
+              >
+                <MapPin className="mr-1 w-4 h-4 shrink-0" />
+                <span className="truncate">
+                  {event.location} {event.location}
+                </span>
+              </div>
+            </div>
+          )}
         </div>
-        <Link
-          href={`/activities/${event.id}`}
-          className="p-2 rounded-full transition-colors shrink-0 hover:bg-gray-100 dark:hover:bg-gray-800"
-          aria-label={`Détails de l'événement: ${event.title}`}
-          title="Voir plus de détails"
-        >
-          <MoreVertical
-            className="w-4 h-4 text-gray-500 dark:text-gray-400"
-            aria-hidden="true"
-          />
-        </Link>
+        <div className="flex items-center space-x-2">
+          <Link
+            href={`/activities/${event.id}`}
+            className="p-2 rounded-full transition-colors shrink-0 hover:bg-gray-100 dark:hover:bg-gray-800"
+            aria-label={`Détails de l'événement: ${event.title}`}
+            title="Voir plus de détails"
+          >
+            <MoreVertical
+              className="w-4 h-4 text-gray-500 dark:text-gray-400"
+              aria-hidden="true"
+            />
+          </Link>
+          {event.location && (
+            <button
+              onClick={() => setIsExpanded(!isExpanded)}
+              className="p-2 rounded-full transition-colors hover:bg-gray-100 dark:hover:bg-gray-800"
+              aria-label={isExpanded ? "Masquer la carte" : "Afficher la carte"}
+            >
+              {isExpanded ? (
+                <ChevronUp className="w-4 h-4 text-gray-500 dark:text-gray-400" />
+              ) : (
+                <ChevronDown className="w-4 h-4 text-gray-500 dark:text-gray-400" />
+              )}
+            </button>
+          )}
+        </div>
       </div>
-      {event.location && (
-        <div className="px-2 mt-4">
-          <GoogleMapsEmbed
-            apiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY!}
-            height={250}
-            width="100%"
-            mode="place"
-            q={event.location}
-            style="rounded-lg"
-          />
+
+      {isExpanded && event.location && (
+        <div
+          className="overflow-hidden transition-all duration-300 ease-in-out"
+          style={{
+            maxHeight: isExpanded ? "300px" : "0",
+            opacity: isExpanded ? 1 : 0,
+          }}
+        >
+          <div className="px-4 pb-4 animate-fade-in-down">
+            <GoogleMapsEmbed
+              apiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY!}
+              height={250}
+              width="100%"
+              mode="place"
+              q={event.location}
+              style="rounded-lg"
+            />
+          </div>
         </div>
       )}
     </div>
