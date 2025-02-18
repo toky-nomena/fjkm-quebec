@@ -15,7 +15,10 @@ import { BranchIcon } from "./branch-icon";
 import { Suspense } from "react";
 import BranchSelector from "./branch-selector";
 import { BranchResponsibles } from "./branch-responsibles";
-import { EventItemSkeleton } from "@/components/events/event-skeleton";
+import {
+  EventItemSkeleton,
+  EventItemSkeletonList,
+} from "@/components/events/event-skeleton";
 
 export default async function BranchPage({
   params,
@@ -144,7 +147,13 @@ export default async function BranchPage({
       </div>
       {/* Events Section */}
       <div className="w-full lg:w-1/3">
-        <Suspense fallback={<EventItemSkeleton />}>
+        <Suspense
+          fallback={
+            <div className="space-y-4">
+              <EventItemSkeletonList />
+            </div>
+          }
+        >
           <Events />
         </Suspense>
       </div>

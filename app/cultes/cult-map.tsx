@@ -10,7 +10,7 @@ export function CustomMap({ address, className }: CustomMapProps) {
   const formattedAddress = address.replace(/\s+/g, "+");
 
   return (
-    <div className={`h-full ${className}`}>
+    <div className={className}>
       <GoogleMapsEmbed
         apiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY!}
         height={400}

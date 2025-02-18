@@ -11,7 +11,7 @@ import { BlurFade } from "@/components/magicui/blur-fade";
 
 export default function HistoryPage() {
   return (
-    <article className="py-12 space-y-16">
+    <article className="space-y-16">
       <BlurFade>
         <header className="space-y-6 text-center">
           <Title className="text-4xl font-extrabold text-foreground">

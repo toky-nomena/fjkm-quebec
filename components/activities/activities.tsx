@@ -12,7 +12,7 @@ export default async function Activities2() {
         Événements de l'Église FJKM Québec
       </h2>
       <div
-        className="grid grid-cols-1 gap-3 md:grid-cols-2"
+        className="flex flex-col gap-3 md:flex-row md:flex-wrap"
         role="list"
         aria-labelledby="events-heading"
         aria-describedby="events-description"
@@ -21,7 +21,9 @@ export default async function Activities2() {
           Liste des événements à venir pour la communauté FJKM Québec
         </p>
         {events.map((event) => (
-          <EventItem key={event.id} event={event} />
+          <div key={event.id} className="w-full md:w-[calc(50%-0.75rem)]">
+            <EventItem event={event} />
+          </div>
         ))}
       </div>
     </div>

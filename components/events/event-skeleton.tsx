@@ -22,3 +22,19 @@ export const EventItemSkeleton = () => {
     </div>
   );
 };
+
+interface EventItemSkeletonListProps {
+  count?: number;
+}
+
+export function EventItemSkeletonList({
+  count = 6,
+}: EventItemSkeletonListProps) {
+  return (
+    <>
+      {Array.from({ length: count }).map((_, index) => (
+        <EventItemSkeleton key={index} />
+      ))}
+    </>
+  );
+}
