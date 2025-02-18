@@ -14,19 +14,19 @@ export function Theme() {
           </h2>
         </div>
       </div>
-      <div className="flex gap-4 justify-between p-8 text-white">
-        <div className="flex-1">
-          <h3>Culte du Dimanche</h3>
+      <div className="flex flex-col gap-2 justify-between p-6 text-white sm:flex-row">
+        <div className="flex flex-col flex-1 justify-between">
+          <h3 className="flex-1">Culte du Dimanche</h3>
           <Link
             href="/cultes"
-            className="text-xl font-bold leading-tight hover:underline"
+            className="w-full text-xl font-bold leading-tight hover:underline sm:text-left sm:w-auto"
           >
             22 Fevrier 2025 à 09h30
           </Link>
         </div>
         <Link
           href="/cultes"
-          className="inline-flex justify-center items-center font-semibold bg-primary/10 hover:bg-primary/20 text-primary"
+          className="inline-flex items-center font-semibold bg-primary/10 hover:bg-primary/20 text-primary sm:w-auto"
         >
           Voir plus
           <ArrowRight className="ml-2 w-4 h-4" />

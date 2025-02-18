@@ -6,7 +6,7 @@ import type { Metadata } from "next";
 import MouseMoveEffect from "@/components/ui/mouse-move-effect";
 import { ThemeProvider } from "@/components/theme/theme-provider";
 import Footer from "@/components/footer";
-import { Bg } from "@/components/ui/bg";
+import { PageBackground } from "@/components/ui/page-background";
 import Header from "@/components/header/header";
 import { BackToTop } from "@/components/ui/back-to-top";
 import { Theme } from "@/components/theme";
@@ -27,7 +27,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
           <MouseMoveEffect />
           <div className="relative min-h-screen">
-            <Bg />
+            <PageBackground />
             <div className="relative z-10">
               <Header />
               <main className="container flex-1 mx-auto my-16 space-y-10 reveal">
