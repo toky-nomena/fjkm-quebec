@@ -1,6 +1,6 @@
-import Image from "next/image";
 import { BlurFade } from "@/components/magicui/blur-fade";
 import { getDeaconData } from "./diacres-data";
+import { PeopleGrid } from "./diacre-grid";
 
 export default async function DeaconsPage() {
   const { members, responsibles, deaconRoles } = await getDeaconData();
@@ -35,61 +35,14 @@ export default async function DeaconsPage() {
       </section>
 
       {/* Deacon Responsibles */}
-      <section className="space-y-12">
-        <h2 className="text-3xl font-bold text-center text-foreground">
-          Responsables des Ministères
-        </h2>
-        <div className="grid grid-cols-2 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-          {responsibles.map((responsible, index) => (
-            <BlurFade key={responsible.name} delay={0.2 * (index + 1)}>
-              <div className="space-y-4 text-center group">
-                <Image
-                  src={responsible.image}
-                  alt={responsible.name}
-                  width={128}
-                  height={128}
-                  className="object-cover w-full h-full"
-                />
-                <div>
-                  <h3 className="text-xl font-bold text-foreground">
-                    {responsible.name}
-                  </h3>
-                  <p className="text-muted-foreground">
-                    {responsible.responsibility}
-                  </p>
-                </div>
-              </div>
-            </BlurFade>
-          ))}
-        </div>
-      </section>
+      <PeopleGrid
+        people={responsibles}
+        title="Responsables des Ministères"
+        variant="responsibles"
+      />
 
       {/* Deacon Members */}
-      <section className="space-y-12">
-        <h2 className="text-3xl font-bold text-center text-foreground">
-          Membres du Conseil des Diacres
-        </h2>
-        <div className="grid grid-cols-2 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-          {members.map((member, index) => (
-            <BlurFade key={member.name} delay={0.2 * (index + 1)}>
-              <div className="space-y-4 text-center group">
-                <Image
-                  src={member.image}
-                  alt={member.name}
-                  width={128}
-                  height={128}
-                  className="object-cover w-full h-full"
-                />
-                <div>
-                  <h3 className="text-xl font-bold text-foreground">
-                    {member.name}
-                  </h3>
-                </div>
-              </div>
-            </BlurFade>
-          ))}
-        </div>
-      </section>
+      <PeopleGrid people={members} title="Membres du Conseil des Diacres" />
     </article>
   );
 }
