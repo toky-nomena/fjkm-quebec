@@ -3,7 +3,6 @@ import { Suspense } from "react";
 import Image from "next/image";
 
 import { Events } from "@/components/events/events";
-import { ButtonLink } from "@/components/link/button-link";
 import { BlurFade } from "@/components/magicui/blur-fade";
 import Link from "next/link";
 import { EventItemSkeletonList } from "@/components/events/event-skeleton";

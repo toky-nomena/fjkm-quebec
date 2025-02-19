@@ -12,8 +12,8 @@ import { usePathname } from "next/navigation";
 
 const navItems = [
   { name: "Activités", href: "/activities" },
-  { name: "Branches", href: "/branches" },
-  { name: "Histoire", href: "/history" },
+  { name: "Cultes", href: "/cultes" },
+  { name: "Contact", href: "/contact" },
 ];
 
 export default function Header() {

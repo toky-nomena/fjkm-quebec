@@ -7,7 +7,7 @@ import ActiveLink from "./link/active-link";
 
 interface FooterSection {
   title: string;
-  links: { name: string; href: string }[];
+  links: { name: string; href: string; target?: string }[];
   className?: string;
 }
 
@@ -16,7 +16,8 @@ export default async function Footer() {
     {
       title: "L'EGLISE",
       links: [
-        { name: "Cultes", href: "/cults" },
+        { name: "Cultes", href: "/cultes" },
+        { name: "Histoire", href: "/history" },
         { name: "Pasteur", href: "/pastor" },
         { name: "Diacres", href: "/diacres" },
         { name: "Branches et associations", href: "/branches" },
@@ -28,7 +29,6 @@ export default async function Footer() {
       links: [
         { name: "Mofon'aina", href: "/verses" },
         { name: "Agenda", href: "/agenda" },
-        { name: "Activités", href: "/activities" },
         { name: "Contact Us", href: "/contact" },
       ],
     },
@@ -40,7 +40,11 @@ export default async function Footer() {
           name: "Email: contact@fjkm-quebec.ca",
           href: "mailto:contact@fjkm-quebec.ca",
         },
-        { name: "Facebook", href: "https://ww.facebook.com/fjkm-quebec" },
+        {
+          name: "Facebook",
+          href: "https://ww.facebook.com/fjkm-quebec",
+          target: "_blank",
+        },
       ],
     },
     {
@@ -55,6 +59,17 @@ export default async function Footer() {
 
   return (
     <footer className="border-t bg-background/10">
+      <div className="py-8 border-b">
+        <div className="container flex justify-center items-center mx-auto space-y-4">
+          <blockquote className="text-lg italic text-muted-foreground">
+            <p className="text-xl italic text-foreground/80">
+              "Que chacun mette au service des autres la grâce qu'il a reçue, en
+              bon intendant de la grâce de Dieu sous ses différentes formes." -
+              1 Pierre 4:10
+            </p>
+          </blockquote>
+        </div>
+      </div>
       <div className="container grid grid-cols-1 gap-8 py-10 mx-auto md:grid-cols-2 lg:grid-cols-4">
         {footerSections.map((section) => (
           <div key={section.title}>
@@ -65,8 +80,9 @@ export default async function Footer() {
               {section.links.map((link) => (
                 <li key={link.name}>
                   <ActiveLink
-                    href={link.href}
+                    {...link}
                     className="text-sm hover:text-primary"
+                    target={link.target}
                   >
                     {link.name}
                   </ActiveLink>
@@ -79,7 +95,7 @@ export default async function Footer() {
 
       <div className="border-t">
         <div className="container flex flex-col gap-4 justify-between items-center py-6 mx-auto md:flex-row">
-          <p className="text-sm">© 2025 FJKM Québec. Tout droits reservés.</p>
+          <p className="text-sm"> 2025 FJKM Québec. Tout droits reservés.</p>
           <div className="flex space-x-3">
             <Link
               href="https://www.facebook.com/fjkm.quebec.canada"

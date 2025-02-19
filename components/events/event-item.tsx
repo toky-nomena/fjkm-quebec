@@ -42,9 +42,7 @@ function EventItem({ event }: { event: EventDetails }) {
           href={`/activities/${event.id}`}
           aria-label={`Détails de l'événement: ${event.title}`}
         >
-          <h2 className="text-xl font-semibold leading-tight line-clamp-2">
-            {event.title}
-          </h2>
+          {" "}
           <div
             title="Voir plus de détails"
             className="flex gap-2 items-center"
@@ -59,6 +57,9 @@ function EventItem({ event }: { event: EventDetails }) {
               </span>
             </div>
           </div>
+          <h2 className="font-semibold leading-tight line-clamp-2">
+            {event.title}
+          </h2>
         </Link>
 
         {/* Action Buttons */}

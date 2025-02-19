@@ -2,21 +2,19 @@
 
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-import React from "react";
+import { ComponentProps, FC } from "react";
 import { cn } from "@/lib/utils";
 
-interface ActiveLinkProps {
+interface ActiveLinkProps extends ComponentProps<typeof Link> {
   href: string;
-  children: React.ReactNode;
   activeClassName?: string;
-  className?: string;
 }
 
-export const ActiveLink: React.FC<ActiveLinkProps> = ({
+export const ActiveLink: FC<ActiveLinkProps> = ({
   href,
-  children,
   activeClassName,
   className,
+  ...props
 }) => {
   const pathname = usePathname();
   const isActive = pathname === href;
@@ -24,14 +22,13 @@ export const ActiveLink: React.FC<ActiveLinkProps> = ({
   return (
     <Link
       href={href}
+      {...props}
       className={cn(
         isActive ? activeClassName : "",
         isActive ? "text-primary" : "",
         className
       )}
-    >
-      {children}
-    </Link>
+    />
   );
 };
 

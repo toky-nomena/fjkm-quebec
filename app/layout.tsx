@@ -1,6 +1,6 @@
 import "./globals.css";
 import { Suspense, type ReactNode } from "react";
-import { Geist } from "next/font/google";
+import { Geist, Dancing_Script } from "next/font/google";
 import type { Metadata } from "next";
 
 import MouseMoveEffect from "@/components/ui/mouse-move-effect";
@@ -20,10 +20,11 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body
-        className={`${font.className} bg-background text-foreground antialiased`}
-      >
+    <html
+      lang="en"
+      className={`${font.className} bg-background text-foreground antialiased`}
+    >
+      <body>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
           <MouseMoveEffect />
           <div className="relative min-h-screen">

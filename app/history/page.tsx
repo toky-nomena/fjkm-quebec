@@ -92,24 +92,6 @@ export default function HistoryPage() {
           </section>
         </BlurFade>
       ))}
-
-      <BlurFade>
-        <div className="pt-8 mt-16 space-y-4 border-t">
-          <blockquote className="text-lg italic text-muted-foreground">
-            <p>
-              "Car je connais les projets que j'ai formés sur vous, dit
-              l'Éternel, projets de paix et non de malheur, afin de vous donner
-              un avenir et une espérance."
-            </p>
-            <footer className="mt-2 text-sm text-foreground">
-              - Jérémie 29:11
-            </footer>
-          </blockquote>
-          <div className="flex space-x-2">
-            <span className="text-xl font-black uppercase">FJKM Québec</span>
-          </div>
-        </div>
-      </BlurFade>
     </article>
   );
 }

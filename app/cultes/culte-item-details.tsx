@@ -10,20 +10,14 @@ import {
   Camera,
 } from "lucide-react";
 import Link from "next/link";
+import { Cult } from "./cultes-data";
 
 interface CulteDetailsProps {
   className?: string;
-  details: {
-    id: string;
-    title: string;
-    date: string;
-    time: string;
-    location: string;
-    address: string;
-  };
+  details: Cult;
 }
 
-export function CulteDetails({ details, className }: CulteDetailsProps) {
+export function CulteItemDetails({ details, className }: CulteDetailsProps) {
   const formattedDate = new Date(details.date).toLocaleDateString("fr-FR", {
     weekday: "long",
     day: "numeric",
@@ -107,14 +101,9 @@ export function CulteDetails({ details, className }: CulteDetailsProps) {
             <BookOpen className="w-5 h-5 text-primary" />
           </div>
 
-          <div>
-            <div className="text-sm text-gray-600 dark:text-gray-300">
-              Description
-            </div>
-            <p className="text-sm leading-relaxed text-gray-700 dark:text-gray-300">
-              {description}
-            </p>
-          </div>
+          <p className="text-sm leading-relaxed text-gray-700 dark:text-gray-300">
+            {description}
+          </p>
         </div>
 
         <div className="flex items-start mt-4 space-x-3">
