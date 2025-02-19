@@ -23,7 +23,7 @@ export function PeopleGrid({
       <h2 className="text-3xl font-bold text-center text-foreground">
         {title}
       </h2>
-      <div className="grid grid-cols-2 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+      <div className="grid grid-cols-2 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
         {people.map((person, index) => (
           <BlurFade key={person.name} delay={0.2 * (index + 1)}>
             <div className="flex flex-col justify-center items-center p-4 space-y-4 text-center group">

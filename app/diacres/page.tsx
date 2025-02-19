@@ -37,12 +37,12 @@ export default async function DeaconsPage() {
       {/* Deacon Responsibles */}
       <PeopleGrid
         people={responsibles}
-        title="Responsables des Ministères"
+        title="Les membres du bureau des Diacres"
         variant="responsibles"
       />
 
       {/* Deacon Members */}
-      <PeopleGrid people={members} title="Membres du Conseil des Diacres" />
+      <PeopleGrid people={members} title="Les diacres" variant="members" />
     </article>
   );
 }
