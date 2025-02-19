@@ -35,7 +35,7 @@ export const events: EventDetails[] = [];
 export async function getEvents(branchName?: string) {
   if (events.length === 0) {
     const newEvents = await Promise.all(
-      Array.from({ length: 10 }, (_, i) => generateEvent((i + 1).toString()))
+      Array.from({ length: 100 }, (_, i) => generateEvent((i + 1).toString()))
     );
     events.push(...newEvents);
   }

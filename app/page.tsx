@@ -11,8 +11,6 @@ export default function MainPage() {
   return (
     <div className="flex flex-col gap-12 mx-auto lg:flex-row lg:gap-16">
       {/* Right Panel */}
-
-      {/* Left Panel */}
       <div className="space-y-10 w-full lg:w-3/5">
         <header className="space-y-4">
           <h2 className="text-xl font-medium tracking-wide text-muted-foreground md:text-2xl">
@@ -69,7 +67,6 @@ export default function MainPage() {
             </p>
           </div>
         </BlurFade>
-
         <div
           className="flex flex-col items-center space-y-4 text-center md:flex-row md:items-center md:space-x-6 md:space-y-0 md:text-left"
           role="region"
@@ -107,6 +104,7 @@ export default function MainPage() {
         </div>
       </div>
 
+      {/* Left Panel */}
       <div className="w-full lg:w-2/5">
         <div className="flex justify-between items-center mb-6">
           <h2 className="text-xl font-bold md:text-2xl">Les activités</h2>
@@ -125,7 +123,7 @@ export default function MainPage() {
             </div>
           }
         >
-          <Events />
+          <Events maximum={10} />
         </Suspense>
       </div>
     </div>

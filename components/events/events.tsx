@@ -2,8 +2,16 @@ import { getEvents } from "./events-action";
 import { BlurFade } from "../magicui/blur-fade";
 import EventItem from "./event-item";
 
-export async function Events({ branchName }: { branchName?: string }) {
-  const events = await getEvents(branchName);
+export async function Events({
+  maximum,
+  branchName,
+}: {
+  branchName?: string;
+  maximum?: number;
+}) {
+  const events = await getEvents(branchName).then((events) =>
+    maximum ? events.slice(0, maximum) : events
+  );
 
   if (events.length === 0) {
     return (
