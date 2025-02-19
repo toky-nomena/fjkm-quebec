@@ -2,7 +2,7 @@ import { BlurFade } from "@/components/magicui/blur-fade";
 import { Title } from "@/components/ui/title";
 import { CultItemList } from "./cult-item-list";
 import { Suspense } from "react";
-import { Spinner } from "@/components/spinner";
+import { Spinner } from "@/components/ui/spinner/spinner";
 
 export default function CultesPage() {
   return (

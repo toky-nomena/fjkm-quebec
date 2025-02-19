@@ -1,7 +1,7 @@
 import { Suspense } from "react";
 
 import Activities from "@/components/activities/activities";
-import { Spinner } from "@/components/spinner";
+import { Spinner } from "@/components/ui/spinner/spinner";
 import { Title } from "@/components/ui/title";
 
 export default async function ActivitiesPage() {

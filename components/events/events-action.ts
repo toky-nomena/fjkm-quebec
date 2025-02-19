@@ -33,6 +33,7 @@ async function generateEvent(id: string): Promise<EventDetails> {
 export const events: EventDetails[] = [];
 
 export async function getEvents(branchName?: string) {
+  await new Promise((resolve) => setTimeout(resolve, 1000));
   if (events.length === 0) {
     const newEvents = await Promise.all(
       Array.from({ length: 100 }, (_, i) => generateEvent((i + 1).toString()))

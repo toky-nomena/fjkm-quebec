@@ -11,8 +11,11 @@ import { cn } from "@/lib/utils";
 import { usePathname } from "next/navigation";
 
 const navItems = [
+  { name: "Accueil", href: "/" },
+  { name: "Branches", href: "/branches" },
   { name: "Activités", href: "/activities" },
   { name: "Cultes", href: "/cultes" },
+  { name: "Diacres", href: "/diacres" },
   { name: "Contact", href: "/contact" },
 ];
 
@@ -37,7 +40,13 @@ export default function Header() {
                   href={item.href}
                   className={cn(
                     "text-foreground hover:text-primary",
-                    pathname.startsWith(item.href) ? "text-primary" : ""
+                    item.href === "/"
+                      ? pathname === item.href
+                        ? "text-primary"
+                        : ""
+                      : pathname.startsWith(item.href)
+                      ? "text-primary"
+                      : ""
                   )}
                 >
                   {item.name}
