@@ -1,3 +1,5 @@
+import { Branch } from "../branches/branches";
+
 // components/Activity.tsx
 export interface EventDetails {
   id: string;
@@ -8,4 +10,5 @@ export interface EventDetails {
   endTime: string;
   location?: string;
   speakers?: string[];
+  branch: Branch;
 }

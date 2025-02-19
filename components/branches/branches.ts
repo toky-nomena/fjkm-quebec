@@ -1,9 +1,39 @@
-export async function getBranchBySlug(slug: string) {
-  const branches = await getBranches();
-  return branches.find((branch) => branch.slug === slug);
+import { faker } from "@faker-js/faker/locale/fr";
+
+export interface Branch {
+  name: string;
+  acronym: string;
+  slug: string;
+  icon: string;
+  mission: string;
+  missions: string[];
+  verse: string;
+  color: string;
+  responsibles: {
+    role: string;
+    name: string;
+    gender: string;
+  }[];
 }
 
-export async function getBranches() {
+function generateResponsibles() {
+  const roles = [
+    "Président",
+    "Vice-président",
+    "Secrétaire",
+    "Conseiller",
+    "Trésorier",
+    "Secrétaire financier",
+  ];
+
+  return roles.map((role) => ({
+    role,
+    name: faker.person.fullName(),
+    gender: faker.person.sex(),
+  }));
+}
+
+export async function getBranches(): Promise<Branch[]> {
   return [
     {
       name: "Sampana Sekoly Alahady",
@@ -21,33 +51,8 @@ export async function getBranches() {
       ],
       verse:
         "Proverbes 22:6 - Instruis l'enfant selon la voie qu'il doit suivre; et quand il sera vieux, il ne s'en détournera pas.",
-      responsibles: [
-        {
-          role: "Président",
-          name: "Jack Doe",
-          gender: "m",
-        },
-        {
-          role: "Vice-président",
-          name: "Jane Smith",
-          gender: "f",
-        },
-        {
-          role: "Secrétaire",
-          name: "Dave Johnson",
-          gender: "m",
-        },
-        {
-          role: "Conseiller",
-          name: "Rose Doe",
-          gender: "f",
-        },
-        {
-          role: "Trésorier",
-          name: "John Smith",
-          gender: "m",
-        },
-      ],
+      color: "#3498db",
+      responsibles: generateResponsibles(),
     },
     {
       name: "Sampana Fifohazana",
@@ -64,33 +69,8 @@ export async function getBranches() {
       ],
       verse:
         "Matthieu 11:28 - Venez à moi, vous tous qui êtes fatigués et chargés, et je vous donnerai du repos.",
-      responsibles: [
-        {
-          role: "Président",
-          name: "Jack Doe",
-          gender: "m",
-        },
-        {
-          role: "Vice-président",
-          name: "Jane Smith",
-          gender: "f",
-        },
-        {
-          role: "Secrétaire",
-          name: "Dave Johnson",
-          gender: "m",
-        },
-        {
-          role: "Conseiller",
-          name: "Rose Doe",
-          gender: "f",
-        },
-        {
-          role: "Trésorier",
-          name: "John Smith",
-          gender: "m",
-        },
-      ],
+      color: "#f1c40f",
+      responsibles: generateResponsibles(),
     },
     {
       name: "Sampana Mpanazava sy Tily",
@@ -107,33 +87,8 @@ export async function getBranches() {
       ],
       verse:
         "1 Timothée 4:12 - Personne ne méprise ta jeunesse; mais sois un modèle pour les fidèles, en parole, en conduite, en charité, en foi, en pureté.",
-      responsibles: [
-        {
-          role: "Président",
-          name: "Jack Doe",
-          gender: "m",
-        },
-        {
-          role: "Vice-président",
-          name: "Jane Smith",
-          gender: "f",
-        },
-        {
-          role: "Secrétaire",
-          name: "Dave Johnson",
-          gender: "m",
-        },
-        {
-          role: "Conseiller",
-          name: "Rose Doe",
-          gender: "f",
-        },
-        {
-          role: "Trésorier",
-          name: "John Smith",
-          gender: "m",
-        },
-      ],
+      color: "#2ecc71",
+      responsibles: generateResponsibles(),
     },
     {
       name: "Sampana Dorkasy",
@@ -150,33 +105,8 @@ export async function getBranches() {
       ],
       verse:
         "Matthieu 7:12 - Tout ce que vous voulez que les hommes fassent pour vous, faites-le de même pour eux.",
-      responsibles: [
-        {
-          role: "Présidente",
-          name: "Jane Doe",
-          gender: "f",
-        },
-        {
-          role: "Vice-présidente",
-          name: "Jack Smith",
-          gender: "m",
-        },
-        {
-          role: "Secrétaire",
-          name: "Rose Johnson",
-          gender: "f",
-        },
-        {
-          role: "Conseillère",
-          name: "Jane Doe",
-          gender: "f",
-        },
-        {
-          role: "Trésorière",
-          name: "John Smith",
-          gender: "m",
-        },
-      ],
+      color: "#e74c3c",
+      responsibles: generateResponsibles(),
     },
     {
       name: "Sampana Lehilahy Kristiana",
@@ -193,33 +123,8 @@ export async function getBranches() {
       ],
       verse:
         "1 Corinthiens 16:13 - Veillez, demeurez fermes dans la foi, soyez des hommes, fortifiez-vous.",
-      responsibles: [
-        {
-          role: "Président",
-          name: "Jack Doe",
-          gender: "m",
-        },
-        {
-          role: "Vice-président",
-          name: "Jane Smith",
-          gender: "f",
-        },
-        {
-          role: "Secrétaire",
-          name: "Dave Johnson",
-          gender: "m",
-        },
-        {
-          role: "Conseiller",
-          name: "Rose Doe",
-          gender: "f",
-        },
-        {
-          role: "Trésorier",
-          name: "John Smith",
-          gender: "m",
-        },
-      ],
+      color: "#9b59b6",
+      responsibles: generateResponsibles(),
     },
     {
       name: "Sampana Tanora Kristiana",
@@ -236,33 +141,8 @@ export async function getBranches() {
       ],
       verse:
         "Ecclésiaste 12:1 - Souviens-toi de ton créateur pendant les jours de ta jeunesse.",
-      responsibles: [
-        {
-          role: "Président",
-          name: "Jack Doe",
-          gender: "m",
-        },
-        {
-          role: "Vice-président",
-          name: "Jane Smith",
-          gender: "f",
-        },
-        {
-          role: "Secrétaire",
-          name: "Dave Johnson",
-          gender: "m",
-        },
-        {
-          role: "Conseiller",
-          name: "Rose Doe",
-          gender: "f",
-        },
-        {
-          role: "Trésorier",
-          name: "John Smith",
-          gender: "m",
-        },
-      ],
+      color: "#1abc9c",
+      responsibles: generateResponsibles(),
     },
     {
       name: "Fikambanan'ny Mpitendry Zavamaneno",
@@ -279,33 +159,8 @@ export async function getBranches() {
       ],
       verse:
         "Colossiens 3:17 - Et que tout ce que vous faites, en parole ou en œuvre, faites-le au nom du Seigneur Jésus.",
-      responsibles: [
-        {
-          role: "Président",
-          name: "Jack Doe",
-          gender: "m",
-        },
-        {
-          role: "Vice-président",
-          name: "Jane Smith",
-          gender: "f",
-        },
-        {
-          role: "Secrétaire",
-          name: "Dave Johnson",
-          gender: "m",
-        },
-        {
-          role: "Conseiller",
-          name: "Rose Doe",
-          gender: "f",
-        },
-        {
-          role: "Trésorier",
-          name: "John Smith",
-          gender: "m",
-        },
-      ],
+      color: "#16a085",
+      responsibles: generateResponsibles(),
     },
     {
       name: "Asa sy Fitoriana ny Filazantsara",
@@ -323,33 +178,8 @@ export async function getBranches() {
       ],
       verse:
         "Matio 28:19-20 - Allez, faites de toutes les nations des disciples, les baptisant au nom du Père, du Fils et du Saint-Esprit.",
-      responsibles: [
-        {
-          role: "Président",
-          name: "Jack Doe",
-          gender: "m",
-        },
-        {
-          role: "Vice-président",
-          name: "Jane Smith",
-          gender: "f",
-        },
-        {
-          role: "Secrétaire",
-          name: "Dave Johnson",
-          gender: "m",
-        },
-        {
-          role: "Conseiller",
-          name: "Rose Doe",
-          gender: "f",
-        },
-        {
-          role: "Trésorier",
-          name: "John Smith",
-          gender: "m",
-        },
-      ],
+      color: "#2980b9",
+      responsibles: generateResponsibles(),
     },
     {
       name: "Antoko Mpihira Miako Fiderana",
@@ -366,33 +196,13 @@ export async function getBranches() {
       ],
       verse:
         "Psaume 96:1 - Chantez à l'Éternel un cantique nouveau! Chantez à l'Éternel, vous tous habitants de la terre!",
-      responsibles: [
-        {
-          role: "Président",
-          name: "Jack Doe",
-          gender: "m",
-        },
-        {
-          role: "Vice-président",
-          name: "Jane Smith",
-          gender: "f",
-        },
-        {
-          role: "Secrétaire",
-          name: "Dave Johnson",
-          gender: "m",
-        },
-        {
-          role: "Conseiller",
-          name: "Rose Doe",
-          gender: "f",
-        },
-        {
-          role: "Trésorier",
-          name: "John Smith",
-          gender: "m",
-        },
-      ],
+      color: "#8e44ad",
+      responsibles: generateResponsibles(),
     },
   ];
+}
+
+export async function getBranchBySlug(slug: string) {
+  const branches = await getBranches();
+  return branches.find((branch) => branch.slug === slug);
 }

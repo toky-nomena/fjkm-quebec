@@ -1,24 +1,21 @@
-import Image from "next/image";
-import { notFound } from "next/navigation";
+import { Suspense } from "react";
 import Link from "next/link";
+import { notFound } from "next/navigation";
 
+import { BlurFade } from "@/components/magicui/blur-fade";
 import { Contact } from "@/components/contact";
 import { Events } from "@/components/events/events";
-import { getBranchBySlug, getBranches } from "@/components/branches/branches";
-import { BlurFade } from "@/components/magicui/blur-fade";
-import BranchMissions from "./branch-missions";
-import { Title } from "@/components/ui/title";
 import { Facebook } from "@/components/icons/Facebook";
 import { Instagram } from "@/components/icons/Instagram";
+import { Title } from "@/components/ui/title";
 
-import { BranchIcon } from "./branch-icon";
-import { Suspense } from "react";
+import { getBranchBySlug } from "@/components/branches/branches";
+import BranchMissions from "./branch-missions";
 import BranchSelector from "./branch-selector";
+
+import { EventItemSkeletonList } from "@/components/events/event-skeleton";
+import { BranchIcon } from "./branch-icon";
 import { BranchResponsibles } from "./branch-responsibles";
-import {
-  EventItemSkeleton,
-  EventItemSkeletonList,
-} from "@/components/events/event-skeleton";
 
 export default async function BranchPage({
   params,
@@ -36,20 +33,17 @@ export default async function BranchPage({
     <div className="flex flex-col gap-12 lg:flex-row lg:gap-16">
       {/* Main Content Section */}
       <div className="space-y-16 w-full text-center lg:w-2/3">
-        <header className="space-y-4">
+        <header className="mx-auto space-y-4 max-w-xl">
           <div className="flex justify-center items-center rounded-full bg-primary/10">
-            <BranchIcon
-              icon={branch.icon} // Lucide React icon
-              name={branch.name}
-            />
+            <BranchIcon icon={branch.icon} name={branch.name} />
           </div>
 
           <div className="space-y-2">
-            <Title className="text-3xl font-bold text-foreground">
+            <Title className="mx-auto text-3xl font-bold text-foreground">
               {branch.name}
             </Title>
             <BlurFade direction="down">
-              <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
+              <p className="mx-auto text-lg text-muted-foreground">
                 {branch.mission}
               </p>
             </BlurFade>
@@ -62,13 +56,13 @@ export default async function BranchPage({
         >
           <blockquote className="relative max-w-xl">
             <span className="absolute -left-4 text-4xl opacity-50 text-muted-foreground">
-              “
+              "
             </span>
             <em className="text-xl italic leading-relaxed text-muted-foreground">
               {branch.verse}
             </em>
             <span className="absolute -right-4 text-4xl opacity-50 text-muted-foreground">
-              ”
+              "
             </span>
           </blockquote>
         </section>
@@ -96,16 +90,25 @@ export default async function BranchPage({
           <BranchResponsibles responsibles={branch.responsibles} />
         </section>
 
+        <Suspense>
+          <BranchSelector />
+        </Suspense>
+      </div>
+      {/* Right Sidebar */}
+      <div className="space-y-8 w-full lg:w-1/3 lg:sticky lg:top-24 lg:self-start">
         <section
           id="contact"
           aria-labelledby="contact-title"
-          className="space-y-8"
+          className="space-y-4"
         >
-          <h2 id="contact-title" className="text-2xl font-bold text-foreground">
+          <h2
+            id="contact-title"
+            className="pb-2 text-2xl font-bold border-b text-foreground"
+          >
             Contact
           </h2>
-          <div className="flex flex-col items-center space-y-4">
-            <div className="space-y-2">
+          <div className="flex flex-col space-y-4">
+            <div>
               <p className="text-lg text-muted-foreground">
                 <Contact
                   label="Téléphone"
@@ -141,21 +144,23 @@ export default async function BranchPage({
             </div>
           </div>
         </section>
-        <Suspense>
-          <BranchSelector />
-        </Suspense>
-      </div>
-      {/* Events Section */}
-      <div className="w-full lg:w-1/3">
-        <Suspense
-          fallback={
-            <div className="space-y-4">
-              <EventItemSkeletonList />
-            </div>
-          }
-        >
-          <Events />
-        </Suspense>
+        <section className="space-y-4">
+          <h2
+            id="contact-title"
+            className="pb-2 text-2xl font-bold border-b text-foreground"
+          >
+            Les activités
+          </h2>
+          <Suspense
+            fallback={
+              <div className="space-y-4">
+                <EventItemSkeletonList />
+              </div>
+            }
+          >
+            <Events branchName={branch.name} />
+          </Suspense>
+        </section>
       </div>
     </div>
   );

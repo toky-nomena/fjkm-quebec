@@ -13,10 +13,12 @@ interface BranchResponsiblesProps {
 
 export function BranchResponsibles({ responsibles }: BranchResponsiblesProps) {
   return (
-    <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+    <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4">
       {responsibles.map((responsible, index) => {
         const imageUrl =
-          responsible.gender === "m" ? "/images/boy.png" : "/images/girl.png";
+          responsible.gender === "Homme"
+            ? "/images/boy.png"
+            : "/images/girl.png";
         return (
           <div
             key={index}

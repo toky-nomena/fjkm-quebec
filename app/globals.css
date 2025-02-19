@@ -10,7 +10,7 @@
     --card-foreground: 240 10% 3.9%;
     --popover: 224 71% 4%; /* Deep blue-based background */
     --popover-foreground: 0 0% 98%;
-    --primary: 217, 91%, 60%; /* Blue primary color */
+    --primary: 225, 100%, 50%; /* Blue primary color */
     --primary-foreground: 0 0% 100%; /* White foreground for contrast */
     --secondary: 155, 89%, 59%;
     --secondary-foreground: 240 5.9% 10%;
@@ -33,7 +33,7 @@
     --card-foreground: 0 0% 98%;
     --popover: 224 71% 4%; /* Deep blue-based background */
     --popover-foreground: 0 0% 98%;
-    --primary: 217, 91%, 60%; /* Blue primary color */
+    --primary: 225, 100%, 50%; /* Blue primary color */
     --primary-foreground: 0 0% 100%; /* White foreground for contrast */
     --secondary: 155, 89%, 59%;
     --secondary-foreground: 0 0% 98%;
@@ -94,4 +94,26 @@
 
 .scale-down {
   transform: scale(1);
+}
+
+@keyframes expand {
+  from {
+    max-height: 0;
+    opacity: 0;
+  }
+  to {
+    max-height: 24rem;
+    opacity: 1;
+  }
+}
+
+@keyframes collapse {
+  from {
+    max-height: 24rem;
+    opacity: 1;
+  }
+  to {
+    max-height: 0;
+    opacity: 0;
+  }
 }

@@ -1,9 +1,17 @@
 import { getEvents } from "./events-action";
 import { BlurFade } from "../magicui/blur-fade";
-import { EventItem } from "./event-item";
+import EventItem from "./event-item";
 
-export async function Events() {
-  const events = await getEvents();
+export async function Events({ branchName }: { branchName?: string }) {
+  const events = await getEvents(branchName);
+
+  if (events.length === 0) {
+    return (
+      <div className="space-y-4">
+        <p>Aucune activité prévue pour le moment.</p>
+      </div>
+    );
+  }
 
   return (
     <div className="space-y-4">

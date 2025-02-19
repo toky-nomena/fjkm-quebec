@@ -1,4 +1,4 @@
-import { EventItem } from "../events/event-item";
+import EventItem from "../events/event-item";
 import { getEvents } from "../events/events-action";
 
 export default async function Activities2() {
@@ -21,7 +21,7 @@ export default async function Activities2() {
           Liste des événements à venir pour la communauté FJKM Québec
         </p>
         {events.map((event) => (
-          <div key={event.id} className="w-full md:w-[calc(50%-0.75rem)]">
+          <div key={event.id} className="w-full lg:w-[calc(50%-0.75rem)]">
             <EventItem event={event} />
           </div>
         ))}

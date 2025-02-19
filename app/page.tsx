@@ -110,7 +110,7 @@ export default function MainPage() {
 
       <div className="w-full lg:w-2/5">
         <div className="flex justify-between items-center mb-6">
-          <h2 className="text-xl font-bold md:text-2xl">Nos activités</h2>
+          <h2 className="text-xl font-bold md:text-2xl">Les activités</h2>
           <Link
             href="/activities"
             className="inline-flex justify-center items-center font-semibold bg-primary/10 hover:bg-primary/20 text-primary"
