@@ -39,19 +39,17 @@ export default async function DeaconsPage() {
         <h2 className="text-3xl font-bold text-center text-foreground">
           Responsables des Ministères
         </h2>
-        <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+        <div className="grid grid-cols-2 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
           {responsibles.map((responsible, index) => (
             <BlurFade key={responsible.name} delay={0.2 * (index + 1)}>
               <div className="space-y-4 text-center group">
-                <div className="overflow-hidden mx-auto w-48 h-48 rounded-full shadow-lg transition-transform group-hover:scale-105">
-                  <Image
-                    src={responsible.image}
-                    alt={responsible.name}
-                    width={192}
-                    height={192}
-                    className="object-cover w-full h-full"
-                  />
-                </div>
+                <Image
+                  src={responsible.image}
+                  alt={responsible.name}
+                  width={128}
+                  height={128}
+                  className="object-cover w-full h-full"
+                />
                 <div>
                   <h3 className="text-xl font-bold text-foreground">
                     {responsible.name}
@@ -71,19 +69,17 @@ export default async function DeaconsPage() {
         <h2 className="text-3xl font-bold text-center text-foreground">
           Membres du Conseil des Diacres
         </h2>
-        <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+        <div className="grid grid-cols-2 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
           {members.map((member, index) => (
             <BlurFade key={member.name} delay={0.2 * (index + 1)}>
               <div className="space-y-4 text-center group">
-                <div className="overflow-hidden mx-auto w-48 h-48 rounded-full shadow-lg transition-transform group-hover:scale-105">
-                  <Image
-                    src={member.image}
-                    alt={member.name}
-                    width={192}
-                    height={192}
-                    className="object-cover w-full h-full"
-                  />
-                </div>
+                <Image
+                  src={member.image}
+                  alt={member.name}
+                  width={128}
+                  height={128}
+                  className="object-cover w-full h-full"
+                />
                 <div>
                   <h3 className="text-xl font-bold text-foreground">
                     {member.name}
